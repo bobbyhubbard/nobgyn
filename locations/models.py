@@ -36,11 +36,11 @@ class Location(models.Model):
         ordering = ['view_order']
 
     # Methods
-    def get_absolute_url(self):
-        return "/locations"
-
     def __str__(self):
         _name = self.name
         if self.parent_facility:
             _name += " @ " + self.parent_facility
         return _name
+
+    def get_absolute_url(self):
+        return "/locations"
