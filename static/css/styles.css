@@ -494,7 +494,7 @@ span.file_type {
   border: 2px solid #0D7359;
 }
 
-.health_plans .ui-menu {
+.health_plans .ui-menu, .health_plans .ui-helper-hidden-accessible {
   display: none!important;
 }
 
