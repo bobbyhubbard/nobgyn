@@ -21,12 +21,47 @@
   <div class="row justify-content-md-center">
     <div class="col">
       <p>This is a current list of insurance plans accepted by Northland Obstetrics & Gynecology. If you do not find your insurance plan on this list or have questions about your plan's coverage, please contact your insurance company.</p>
-      <p>&nbsp;</p>
-      {% for plan in plans %}
-        <p>{{ plan.name }}</p>
+      <div class="inputContainer">
+        <i class="fal fa-search icon"></i>
+        <input id="plans" class="input-field" type="text" placeholder="Filter by plan name">
+      </div>
+      <div id="filter-cont"></div>
+      <div id="plans-cont">
+      {% for letter, planNames in plans.items %}
+      <h3>{{ letter }}</h3>
+        {% for planName in planNames %}
+        <p>{{ planName }}</p>
+        {% endfor %}
       {% endfor %}
+      </div>
     </div>
   </div>
 </section>
 {{ footerFragment }}
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  {% autoescape off %}
+  $( function() {
+    var availablePlans = [{% for letter, planNames in plans.items %}{% for planName in planNames %}"{{ planName }}",{% endfor %}{% endfor %}
+      ""
+    ];
+    $( "#plans" ).keyup(function() {
+      if ($( "#plans" ).val().length <=0 ){
+        $('#filter-cont').hide();
+        $('#plans-cont').show();
+      }
+    });
+    $( "#plans" ).autocomplete({
+      source: availablePlans,
+      response: function(event, ui) {
+          $('#plans-cont').hide();
+          $('#filter-cont').show().html(""); // clear it
+          $(ui.content).each(function(idx){
+            $('#filter-cont').append("<p>" + ui.content[idx].value + "</p>");
+          });
+      }
+} );
+  } );
+  {% endautoescape %}
+  </script>
 {% endblock %}

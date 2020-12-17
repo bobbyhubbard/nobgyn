@@ -11,7 +11,7 @@
   {% load static %}
   <div class="mb-3">
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand pl-4" href="/"><img src="{% static 'images/northland-obgyn-logo.svg' %}" width="250" alt="" loading="lazy"/></a>
+      <a class="navbar-brand pl-4" href="{% url 'index' %}"><img src="{% static 'images/northland-obgyn-logo.svg' %}" width="250" alt="" loading="lazy"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,16 +19,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/providers">Providers <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'providers:index' %}">Providers <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Services</a>
+            <a class="nav-link" href="{% url 'services:index' %}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/locations">Locations</a>
+            <a class="nav-link" href="{% url 'locations:index' %}">Locations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/resources">Patient Resources</a>
+            <a class="nav-link" href="{% url 'resources:index' %}">Patient Resources</a>
           </li>
         </ul>
       </div>

@@ -21,8 +21,8 @@ class Service(models.Model):
         ordering = ['view_order']
 
     # Methods
-    def get_absolute_url(self):
-        return "/services/" + self.slug
-
     def __str__(self):
         return self.slug
+
+    def get_absolute_url(self):
+        return "/services/" + self.slug

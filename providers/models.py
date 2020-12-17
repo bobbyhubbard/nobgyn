@@ -24,12 +24,12 @@ class Provider(models.Model):
         ordering = ['view_order']
 
     # Methods
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return "/providers/" + str(self.slug)
         # return reverse('providers:providerDetail', current_app=self.request.resolver_match.namespace, self.slug)
-
-    def __str__(self):
-        return self.name
 
 
 class YoutubeVid(models.Model):

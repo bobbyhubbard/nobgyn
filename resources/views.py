@@ -36,10 +36,20 @@ def forms_information(request):
 def health_plans(request):
     try:
         resource = Resource.objects.get(slug__iexact="health_plans")
-        plans = HealthPlan.objects.all()
+        _plans = HealthPlan.objects.all()
 
     except Resource.DoesNotExist:
         raise Http404("Sorry, this page does not exist. ")
+
+    plans = {}
+
+    for plan in _plans:
+        firstLetter = plan.name[0]
+        if plans.get(firstLetter):
+            letterPlans = plans.get(firstLetter)
+            letterPlans.append(plan.name)
+        else:
+            plans.update({firstLetter: [plan]})
 
     context = {
         'resource': resource,

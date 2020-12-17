@@ -55,6 +55,27 @@ i {
   padding-right: 5px;
 }
 
+.inputContainer i {
+   position: absolute;
+}
+.inputContainer {
+   width: 100%;
+   margin: 40px 0 30px 0;
+}
+.icon {
+   padding: 10px;
+   color: #50D3B2;
+   width: 70px;
+   text-align: left;
+}
+.input-field {
+   padding: 0px;
+   padding-left: 40px;
+   text-align: left;
+   font-size: 20px;
+   font-weight: 500;
+}
+
 .fa-facebook {
     font-size: 22px;
   }
@@ -459,6 +480,26 @@ span.file_type {
 }
 .forms_information h2 {
   padding-top: 35px;
+}
+.health_plans #plans {
+  background: #FFFFFF;
+  border: 2px solid #0D7359;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 500px;
+}
+.health_plans #filter-cont {display: none;}
+
+.health_plans .input-field:focus {
+  border: 2px solid #0D7359;
+}
+
+.health_plans .ui-menu {
+  display: none!important;
+}
+
+.health_plans h3 {
+  padding-top: 30px;
 }
 @media (min-width: 1200px) {
   .container-xl {

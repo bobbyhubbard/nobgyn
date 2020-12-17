@@ -46,7 +46,7 @@ class InfoAdmin(ImportExportModelAdmin):
 
 
 class HealthPlanAdmin(ImportExportModelAdmin):
-    resource_class = HealthPlan
+    resource_class = HealthPlanResource
 
 
 admin.site.register(Resource, ResourceAdmin)

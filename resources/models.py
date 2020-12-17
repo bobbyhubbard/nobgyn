@@ -28,11 +28,11 @@ class Resource(models.Model):
         ordering = ['view_order']
 
     # Methods
-    def get_absolute_url(self):
-        return "/resources/" + self.slug
-
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return "/resources/" + self.slug
 
 
 class Form(models.Model):
@@ -92,7 +92,7 @@ class FAQ(models.Model):
 class HealthPlan(models.Model):
 
     name = models.CharField(
-        max_length=50, help_text='Health Plan name', default='')
+        max_length=200, help_text='Health Plan name', default='')
     link = models.URLField(
         help_text='Link (optional)', max_length=200, blank=True, default='')
 

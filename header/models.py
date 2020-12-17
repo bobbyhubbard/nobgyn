@@ -12,9 +12,9 @@ class Banner(models.Model):
     message = models.TextField(
         help_text='What should this banner message say?', default='')
     publish_date = models.DateTimeField(
-        help_text='When should this banner message be published?', blank=False, default=datetime.now)
+        help_text='When should this banner message be published?', default=datetime.now)
     expiration_date = models.DateTimeField(
-        help_text='When should this banner stop being displayed? (Defaults 1 year from now)', blank=False, null=False, default=one_year_from_today)
+        help_text='When should this banner stop being displayed? (Defaults 1 year from now)', default=one_year_from_today)
 
     def __str__(self):
         return self.message

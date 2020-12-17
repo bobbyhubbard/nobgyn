@@ -31,11 +31,11 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.13.103', '3.22.239.246']
 
 # in-memory cache
 CACHES = {
-    'default': {
+    'a': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
     },
-    'a': {
+    'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
     }
 }
@@ -73,10 +73,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_REFERRER_POLICY = True
-SECURE_SSL_REDIRECT = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_REFERRER_POLICY = True
+# SECURE_SSL_REDIRECT = True
+
 
 ROOT_URLCONF = 'northlandobgyn.urls'
 
