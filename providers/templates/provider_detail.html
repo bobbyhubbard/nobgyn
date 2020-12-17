@@ -1,0 +1,54 @@
+{% extends "base_generic.html" %}
+{% block title %}{{provider.name}}{% endblock %}
+{% block pageId %}provider_detail{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="{{provider.slug}}" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <span>Our Providers</span>
+      <h1>{{provider.name}}</h1>
+      <span>{{provider.focus}}</span>
+    </div>
+  </div>
+</header>
+<section class="container">
+  <div class="row justify-content-md-center">
+    <div class="left_col">{% autoescape off %}
+      {{provider.bio}}{% endautoescape %}
+      <h2>Specialties &amp; Areas of Interest</h2>
+      {{provider.specialty}}
+      <h2>Education</h2>
+      {% for schoolRel in schoolRels %}
+      <p>{% autoescape off %}{{schoolRel.formatted}} {% if schoolRel.graduation_year %}&dash; {{schoolRel.graduation_year}}{% endif %} {% endautoescape %}</p>
+      {% endfor %}
+      <h2>Certifications and Organizations</h2>
+      {% for certOrgRel in certOrgRels %}
+      <p>{% autoescape off %}{{certOrgRel.certOrg}} {% endautoescape %}</p>
+      {% endfor %}
+    </div>
+    <div class="right_col">
+      <picture class="img-responsive">
+        <source srcset="/{{ provider.image_sml }}" media="(max-width: 700px)">
+        <source srcset="/{{ provider.image }}">
+        <img src="/{{ provider.image }}" alt="{{ provider.slug }}" class="img-responsive">
+      </picture>
+      <div class="vids">
+        {% for vid in vids %}
+        <div>
+          <iframe width="471" height="265" src="{{vid.video_url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <span>{{vid.name}}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

@@ -1,0 +1,521 @@
+a, a:visited {
+  color: #0D7359;
+  text-decoration: underline;
+  text-decoration-color: #50D3B2;
+}
+
+a:hover {
+  color: #0D7359;
+  text-decoration: underline;
+  text-decoration-color: #0D7359;
+}
+
+.container-xl {
+  padding: 0;
+}
+
+body {
+  font-family: Open Sans;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 160%;
+  color: #022C21;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: Alegreya Sans;
+  font-style: normal;
+}
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+h2 {
+  font-size: 32px;
+  line-height: 35px;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 29px;
+ }
+
+ ul {
+   padding-top: 20px;
+   list-style: none;
+ }
+
+i {
+  color: #50D3B2;
+  padding-right: 5px;
+}
+
+.fa-facebook {
+    font-size: 22px;
+  }
+
+.social {
+  height: 22px
+}
+
+.social a {
+    line-height:22px;
+    vertical-align: top;
+}
+
+.banner {
+  background: #50D3B2;
+}
+.banner ul {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.banner li {
+  font-size: 18px;
+  color: #022C21;
+  display:none;
+}
+
+.banner li:first-of-type {
+  display:block;
+}
+
+.navbar-nav li {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D7359;
+  padding-right: 20px;
+}
+
+#navbarSupportedContent {
+  padding-right: 3em;
+}
+
+header {
+  background: #F2F8F7;
+  padding-bottom: 10px;
+}
+header .tagline {
+  max-width: 765px;
+}
+
+.tagline {
+  max-width: 650px;
+  padding: 15px;
+}
+
+header p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+footer {
+  font-size: 16px;
+  line-height: 100%;
+  background: #F2F8F7;
+}
+
+footer h4 {
+  color: #161817;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 1.5em;
+}
+
+footer p.line {
+  border-bottom: 1px solid #0D7359;
+}
+
+footer .branding {
+  font-size: 14px;
+  padding-top: 1.5em;
+}
+
+footer .branding p {
+  line-height: 22px;
+}
+
+footer .branding a {
+  text-decoration: underline;
+}
+
+.services .container {
+  text-align: center;
+  max-width: 565px;
+}
+
+.services .container-xl {
+  text-align: center;
+}
+
+section .container, section .container-xl, .providers .g-bg h2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.overlay_centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay_centered h1 {
+  color: #022C21;
+  font-size: 80px;
+  line-height: 80px;
+  padding:0
+}
+.overlay_centered.white h1 {
+  color: #FFF;
+}
+
+.services img {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 16px;
+}
+
+.services .highlighted_link a {
+  font-size: 32px;
+}
+
+.providers p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  margin-bottom: 0;
+}
+
+.providers a {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0em;
+  color: #0D7359;
+}
+
+.highlighted_link a {
+  font-family: Alegreya Sans;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D7359;
+}
+
+.home .providers .g-bg {
+ background: #F2F8F7;
+}
+
+.providers .g-bg .row {
+  margin-right: 0px;
+ margin-left: 0px;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img-container {
+  background-size: 100%;
+  width: 100%;
+  background-position: bottom;
+  position: relative;
+}
+
+.doctors h1 {
+  text-align: left;
+}
+
+.doctors a {
+  font-size: 24px;
+}
+
+.doctors p.name {
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.doctors .container-xl {
+  margin-top: 10px;
+}
+
+.provider-detail header {
+  background: #FFF;
+}
+
+header .overlay_centered span {
+  font-family: Alegreya Sans;
+  font-size:20px;
+  line-height: 22px;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #022C21;
+  opacity: 0.5;
+}
+.provider-detail header span:last-of-type {
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.provider_detail section.container {
+  padding: 35px 0;
+  max-width: 1200px;
+}
+
+.left_col {
+  max-width: 60%;
+  padding-right: 50px;
+}
+
+.right_col {
+  max-width: 40%;
+  padding-left: 20px;
+}
+
+.provider_detail .left_col h2 {
+  padding-top: 30px;
+}
+
+.vids div {
+  padding-top: 35px;
+}
+
+.services-idx .tagline {
+  font-size: 24px;
+}
+
+.service-item {
+  padding-bottom: 35px;
+  margin-left: 70px;
+}
+
+.service-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.service-item .service-summary {
+  margin-left: 60px;
+}
+
+.service_detail section {
+  padding: 35px 0;
+}
+
+.service_detail .left_col {
+  padding-right: 70px;
+  font-size: 22px;
+  line-height: 35px;
+  max-width: 70%;
+}
+
+.service_detail .right_col {
+  max-width: 25%;
+  font-size: 18px;
+  line-height: 31px;
+  max-width: 30%;
+}
+
+.service_detail .services {
+  padding-top: 3em!important;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+span.file_type {
+  color: #022C21;
+  opacity: 0.5;
+}
+
+.service_detail .services li::before {
+  content: "\2022";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  padding-top: 15px;
+  color: #50D3B2;
+}
+
+.massage-therapy section.container {
+  max-width: 1200px !important;
+}
+.massage-therapy .benefits {
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), #F2F8F7;
+  opacity: 0.8;
+  padding-top: 20px;
+  margin-top: 35px;
+}
+
+.massage-therapy .benefits h2 {
+  text-align: center;
+}
+.massage-therapy h4 {
+  text-align: center;
+  font-size: 26px;
+  padding-top: 15px;
+}
+.massage-therapy .benefits ul {
+  font-size: 20px;
+  padding:0 20px;
+}
+
+.massage-therapy .benefits .col {
+  padding-right: 0;
+}
+
+.massage-therapy .benefits li::before {
+  content: "\2022";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  padding-top: 15px;
+  color: #50D3B2;
+}
+.massage-therapy em {
+  position: absolute;
+  top: 140px;
+  left: 70px;
+  font-size: 14px;
+  color: #8D9694;
+}
+
+.massage-therapy .right_col .container {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 32px rgba(2, 44, 33, 0.15);
+  border-radius: 12px;
+}
+.massage-therapy .right_col .text-left {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-left: 10px;
+}
+.massage-therapy .right_col .text-right {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 10px;
+}
+.massage-therapy .right_col p {
+  margin-bottom: 0;
+}
+.massage-therapy .right_col .title, .massage-therapy .right_col .alt {
+  background: #F2F8F7;
+  margin-bottom: 10px;
+}
+.locations-idx h1 {
+  text-align: left;
+  padding: 0;
+}
+.locations-idx h5 {
+  font-size: 26px;
+  color: #8D9694;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+.locations-idx section .img-responsive {
+  max-width: 500px;
+}
+.locations-idx .highlighted_content {
+  background: #F2F8F7;
+  padding: 48px 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.locations-idx .highlighted_content h2 {
+  padding-bottom: 15px;
+}
+.resource-summary small {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.forms_information section {
+  margin-top:15px;
+  margin-left: 365px;
+  margin-bottom: 50px;
+}
+.forms_information h2 {
+  padding-top: 35px;
+}
+@media (min-width: 1200px) {
+  .container-xl {
+    max-width: 1440px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home .providers .col-lg-3 {
+      -ms-flex: 0 0 20%;
+      flex: 0 0 20%;
+      max-width: 20%;
+  }
+  .home .locations .col-lg-6 {
+      -ms-flex: 0 0 30%;
+      flex: 0 0 30%;
+      max-width: 30%;
+  }
+}
+footer .logo-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .overlay_centered h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .doctors p.name a {
+    font-size: 20px;
+  }
+  .doctors .pr-5 {
+    padding-right: 0!important;
+    padding-left: 0;
+  }
+  footer .px-5, footer .pl-4 {
+    padding-right: 0!important;
+    padding-left: 0!important;
+  }
+
+  footer .col {
+    min-width: 100%;
+    order: 2;
+  }
+  footer .col h4 {
+    padding-top: 35px;
+  }
+  footer .branding {
+    padding-top: 35px;
+  }
+  footer .branding img {
+    display: none;
+  }
+  footer .logo-mobile {
+    padding-top: 35px;
+    text-align: center;
+    display: block;
+  }
+
+}

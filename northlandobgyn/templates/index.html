@@ -1,0 +1,91 @@
+{% extends "base_generic.html" %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/northland-obstetrics-gynecology-team.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/northland-obstetrics-gynecology-team.jpg' %}">
+      <img src="{% static 'images/JPGs/northland-obstetrics-gynecology-team.jpg' %}" alt="Flowers" class="img-responsive">
+    </picture>
+  </div>
+  <div class="tagline container">
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <h1>A Tradition of Women’s Healthcare</h1>
+        <p>For over 50 years, Northland Obstetrics and Gynecology has been dedicated to providing the highest quality of healthcare to women in the Kansas City Northland.</p>
+      </div>
+    </div>
+  </div>
+</header>
+{% if services %}
+<section class="services">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <h1>Our Services</h1>
+        <p>Our providers specialize in obstetrics, gynecology, and massage therapy services in offices conveniently located across the Kansas City Northland, including North Kansas City, Liberty, Gladstone, Shoal Creek, Staley and Kearney.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-xl">
+    <div class="row justify-content-md-center">
+      {% for service in services %}
+      <div class="col-sm" style="max-width:20%">
+        <div><a href="{{ service.get_absolute_url }}"><img src="{{ service.icon }}" width="100%"/></a></div>
+        <p class="highlighted_link"><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% if providers %}
+<section class="providers">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <h1>Meet our Providers</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container-xl g-bg">
+    <div class="row justify-content-md-center">
+      {% for provider in providers %}
+      <div class="col-md-6 col-lg-3 px-0">
+        <div><a href="{{ provider.get_absolute_url }}"><img src="{{ provider.image_sml }}" width="100%" loading="lazy"/></a></div>
+        <div class="pl-2">
+          <p class="name"><a href="{{ provider.get_absolute_url }}">{{ provider.name }}</a></p>
+          <p>{{ provider.focus }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row justify-content-md-center">
+      <h2 class="highlighted_link"><a href="/providers">Meet all Providers and Staff</a></h2>
+    </div>
+  </div>
+</section>
+{% endif %}
+<section class="locations">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <h1>Our Locations</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container-xl">
+    <div class="row justify-content-md-center">
+      {% for location in locations %}
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div><a href="{{ location.get_absolute_url }}"><img src="{{ location.image }}" width="100%" loading="lazy"/></a></div>
+        <h2 class="highlighted_link"><a href="{{ location.get_absolute_url }}">{{ location.name }}</a></h2>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base_generic.html" %}
+{% block pageId %}providers-idx{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/providers-northland-obgyn.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/providers-northland-obgyn.jpg' %}">
+      <img src="{% static 'images/JPGs/providers-northland-obgyn.jpg' %}" alt="Flowers" class="img-responsive">
+    </picture>
+    <div class="overlay_centered white"><h1>Our Providers</h1></div>
+  </div>
+
+  <div class="tagline container">
+    <div class="row justify-content-md-center">
+      <div class="col"></div>
+  </div>
+</header>
+<section class="tagline container pt-5">
+  <div class="row justify-content-md-center">
+    <div class="col">
+      <p>For over 50 years, Northland Obstetrics & Gynecology has been dedicated to
+        providing the highest quality of healthcare to women in the Kansas City Northland.</p>
+      <p>Northland Obstetrics & Gynecology is a physician-owned practice which allows us
+        to make the best decisions when it comes to recommending, treating, and referring
+        our patients.</p>
+      <p>Our physicians and staff make a point of making your experience as simple and as
+        easy as possible. We have <a href="/locations">convenient locations</a>, parking, and appointment times.
+        Our doctors accept all major insurances. For more information, please visit our
+        <a href="/health_plans">insurance page</a>.</p>
+    </div>
+  </div>
+</section>
+<section class="doctors container-xl px-5">
+  <h1>Doctors</h1>
+  <div class="container-xl g-bg">
+    <div class="row">
+      {% for provider in providers %}
+      {% if provider.doctor %}
+      <div class="col-sm-12 col-md-6 col-lg-4 pr-5 pt-5">
+        <div><a href="{{ provider.get_absolute_url }}"><picture class="img-responsive">
+          <source srcset="/{{ provider.image_sml }}" media="(max-width: 700px)">
+          <source srcset="/{{ provider.image }}">
+          <img src="/{{ provider.image }}" alt="{{ provider.slug }}" class="img-responsive">
+        </picture></a></div>
+        <div class="pl-2">
+          <p class="name"><a href="{{ provider.get_absolute_url }}">{{ provider.name }}</a></p>
+          <p>{{ provider.focus }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <h1>Nurse Practitioners</h1>
+  <div class="container-xl g-bg">
+    <div class="row">
+      {% for provider in providers %}
+      {% if not provider.doctor %}
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div><a href="{{ provider.get_absolute_url }}"><img src="/{{ provider.image_sml }}" width="100%" loading="lazy"/></a></div>
+        <div class="pl-2">
+          <p class="name"><a href="{{ provider.get_absolute_url }}">{{ provider.name }}</a></p>
+          <p>{{ provider.focus }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

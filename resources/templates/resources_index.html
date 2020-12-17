@@ -1,0 +1,62 @@
+{% extends "base_generic.html" %}
+{% block pageId %}resources-idx{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/patient-resources.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/patient-resources.jpg' %}">
+      <img src="{% static 'images/JPGs/patient-resources.jpg' %}" alt="Patient Resources" class="img-responsive">
+    </picture>
+    <div class="overlay_centered white"><h1>Patient Resources</h1></div>
+  </div>
+
+  <div class="tagline container">
+    <div class="row justify-content-md-center">
+      <div class="col"></div>
+  </div>
+</header>
+<section class="px-5 py-5">
+  <div class="container-lg">
+    <div class="row justify-content-md-center">
+      {% for resource in resources %}
+      <div class="col-5 service-item">
+        <div class="row">
+          <div class="col-2"><img src="/{{ resource.icon }}" alt="{{ resource.slug }}" class="resource-icon" width="60"></div>
+          <div class="col resource-summary">
+            {% if resource.external_link %}
+              <h2><a target="{{resource.slug}}" href="{{ resource.external_link }}">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></h2>
+            {% elif resource.form_content %}
+              <h2><a href="#" target="billpay" onclick="$('form[name=&quot;billpay&quot;]').submit(); event.preventDefault()">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></h2>
+              {% autoescape off %}{{ resource.form_content }}{% endautoescape %}
+            {% else %}
+              <h2><a href="{{ resource.get_absolute_url }}">{{ resource.name }}</a></h2>
+            {% endif %}
+            {% if resource.slug == 'forms_information' %}
+                {% for form in forms %}
+                <p><a href="{% firstof form.file form.link %}">{{form.name}}</a> {% if form.file_type %}<span class="file_type">({{form.file_type}})</span>{% endif %}</p>
+                {% endfor %}
+                {% for info in infos %}
+                <p><a href="{% firstof info.file info.link %}">{{info.name}}</a> {% if info.file_type %}<span class="file_type">({{info.file_type}})</span>{% endif %}</p>
+                {% endfor %}
+                {% for faq in faqs %}
+                <p><a href="{% firstof faq.file faq.link %}">{{faq.name}}</a> {% if faq.file_type %}<span class="file_type">({{faq.file_type}})</span>{% endif %}</p>
+                {% endfor %}
+
+            {% else %}
+            {% autoescape off %}
+              <p>{{ resource.content }}</p>
+              {% endautoescape %}
+            {% endif %}
+
+          </div>
+      </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

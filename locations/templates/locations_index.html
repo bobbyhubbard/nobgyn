@@ -1,0 +1,94 @@
+{% extends "base_generic.html" %}
+{% block title %}Our Locations{% endblock %}
+{% block pageId %}locations-idx{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <h1>Our Locations</h1>
+    </div>
+  </div>
+</header>
+{% for location in locations %}
+<section class="container-xl">
+  <div class="row justify-content-md-center">
+    <div class="left_col">
+      {% autoescape off %}
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col">
+            <h1>{{location.name}}</h1>
+            <h5>{{location.parent_facility}}</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <picture class="img-responsive">
+              <source srcset="/{{ location.image_sml }}" media="(max-width: 500px)">
+              <source srcset="/{{ location.image }}">
+              <img src="/{{ location.image }}" alt="{{ location.slug }}" class="img-responsive" loading="lazy">
+            </picture>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>{{ location.desc }}</p>
+        </div>
+    </div>
+      {% endautoescape %}
+      </div>
+    </div>
+    <div class="right_col">
+      <div class="container">
+        <div class="row title">
+          <div class="col">
+            <h4>Appointments</h4>
+            <div class="row">
+              <div class="col-1"><i class="fal fa-clock"></i></div>
+              <div class="col"><p>{{ location.appointment_text }}</p></div>
+            </div>
+            <div class="row">
+              <div class="col-1"><i class="fal fa-phone-alt"></i></div>
+              <div class="col"><p>{{ location.phone }}</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col">
+            <iframe
+            width="471"
+            height="236"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhsOOBKF5HaptHgpR1tnmXoPF2CxhVLcg&q={{ location.address1 }} {{ location.address2 }} {{ location.city_state_zip }}" allowfullscreen>
+          </iframe>
+          <div class="row">
+            <div class="col-1"><i class="fal fa-map-marker-alt"></i></div>
+            <div class="col">
+            <p>{{ location.address1 }}<br/>
+              {{ location.address2 }}<br/>
+              {{ location.city_state_zip }}
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if location.highlighted_content %}
+  <div class="row justify-content-md-center highlighted_content">
+      {% autoescape off %}
+      {{ location.highlighted_content}}
+      {% endautoescape %}
+  </div>
+  {% endif %}
+</section>
+{% endfor %}
+{{ footerFragment }}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+{% block title %}{{service.name}}{% endblock %}
+{% block pageId %}service_detail {{service.slug}}{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="{{service.slug}}" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <span>Services</span>
+      <h1>{{ service.name }}</h1>
+    </div>
+  </div>
+</header>
+<section class="container-lg">
+  <div class="row justify-content-md-center">
+    <div class="left_col">
+      {% autoescape off %}
+      <div>{{ service.desc }}</div>
+      <div class="services">
+        <h2>Services</h2>
+        <div class="services_content">{{ service.services }}</div>
+      </div>
+      {% endautoescape %}
+    </div>
+    <div class="right_col">
+      <h4>Information</h4>{% autoescape off %}
+      {{ service.sidebar }}
+      {% endautoescape %}
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

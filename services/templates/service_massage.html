@@ -1,0 +1,112 @@
+{% extends "base_generic.html" %}
+{% block title %}{{service.name}}{% endblock %}
+{% block pageId %}service_detail {{service.slug}}{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="{{service.slug}}" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <span>Services</span>
+      <h1>{{ service.name }}</h1>
+    </div>
+  </div>
+</header>
+<section class="container">
+  <div class="row">
+    <div class="left_col">
+      {% autoescape off %}
+      <div>
+        <p>Massage therapy helps you relax, re-align and rejuvenate. There are many positive aspects to receiving massage therapy on an ongoing basis, and with the busy lives we lead, we can all benefit from a little stress-management.</p>
+        <p><strong>Gift certificates available. Makes a great gift. Or treat yourself today!</strong></p>
+      </div>
+      <div class="container benefits">
+        <div class="row justify-content-md-center">
+          <div class="col">
+            <h2>Benefits of Massage</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li>Relieve stress</li>
+              <li>Encourage relaxation</li>
+              <li>Improve posture</li>
+              <li>Reduces swelling</li>
+              <li>Improves sleep</li>
+              <li>Reduces fatigue</li>
+              <li>Encourages circulation</li>
+              <li>Lower blood pressure</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li>Manage pain</li>
+              <li>Release muscle tension</li>
+              <li>Improves lymphatic and blood circulation</li>
+              <li>Promotes relaxation and deep breathing</li>
+              <li>Lessens anxiety and depression caused by hormone changes</li>
+            </ul>
+          </div>
+      </div>
+      {% endautoescape %}
+      </div>
+    </div>
+    <div class="right_col">
+      <div class="container">
+        <div class="row title">
+          <div class="col">
+            <h4>Swedish or Deep Tissue Massage</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-left">
+            <p>60 Minutes</p>
+          </div>
+          <div class="col text-right">
+            <p>$55.00</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-left alt">
+            <p>30 Minutes</p>
+          </div>
+          <div class="col text-right alt">
+            <p>$30.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row title">
+          <div class="col">
+            <h4>Prenatal Massage*</h4>
+            <em>* Must be at least 12 weeks</em>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-left">
+            <p>60 Minutes</p>
+          </div>
+          <div class="col text-right">
+            <p>$55.00</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-left alt">
+            <p>30 Minutes</p>
+          </div>
+          <div class="col text-right alt">
+            <p>$30.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

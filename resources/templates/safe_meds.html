@@ -1,0 +1,170 @@
+{% extends "base_generic.html" %}
+{% block title %}{{resource.name}}{% endblock %}
+{% block pageId %}resource_detail safe_meds{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<script defer src="{% static 'js/jquery-ui-1.12.1.custom.min.js' %}"></script>
+<script defer>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true,
+      heightStyle: "content"
+    });
+  } );
+  </script>
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="{{provider.slug}}" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <span>Patient Resources</span>
+      <h1>Safe Meds During Pregnancy</h1>
+    </div>
+  </div>
+</header>
+<section class="tagline container pt-5">
+  <div class="row justify-content-md-center">
+    <div class="col">
+      <p>The universal disclaimer on medications during pregnancy is no medication has been studied completely. No study could take into account all the variables of human development that pertain to the specific medication. That being said, avoid taking unnecessary medications. This is most important during the first eight weeks of the pregnancy. Certainly, there are chronic prescribed medications such as anti-depressants, anti-hypertensives and thyroid medication, to name a few, which can be very important to the mother's well-being during pregnancy and will be continued. Sometimes, a medication will be changed to a safer alternative. Specific questions regarding medications can be handled at clinic appointments.</p>
+      <p><strong>What about self-medication or OTCs for acute conditions?</strong></p>
+      <p><strong>The following are generally acceptable during pregnancy:</strong></p>
+      <div id="accordion">
+        <h4>Pain or headache</h4>
+        <div>
+          <p>Tylenol (acetaminophen); Ibuprofen (Advil, motrin) up to 32 weeks pregnant. Tylenol and motrin may be used together. To alleviate a migraine headache, drink a caffeinated beverage with Tylenol and motrin, though we don't advocate the regular consumption of caffeine.</p>
+        </div>
+        <h4>Cold, runny nose</h4>
+        <div>
+          <ul>
+            <li>Vaporizer at bedside</li>
+            <li>Vicks VapoRub</li>
+            <li>Nasal irrigation: 1/2 tsp. salt, 1/2 tsp. baking soda in 8 oz. warm water. Irrigate nasal
+               passages 3-4 times daily</li>
+            <li>Cepastat lozenges or throat sprays</li>
+            <li>Afrin (oxymetazoline)—theoretic precautions in IUGR cases</li>
+            <li><em>Antihistamines
+              </em>
+              <ul>
+                <li>Chlor-trimetron (chlorpheniramine)—after 12 weeks pregnant</li>
+                <li>Sudafed (pseudoephedrine)—after 12 weeks pregnant</li>
+                <li>Novahistine—after 12 weeks pregnant</li>
+                <li>Tylenol cold and sinus—after 12 weeks pregnant</li>
+                <li>Advil cold and sinus—after 12 weeks and before 32 weeks pregnant</li>
+                <li>Claritin (loratadine)—after 12 weeks</li>
+                <li>Zyrtec—after 12 weeks</li>
+                <li>Mucinex D—after 12 weeks</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <h4>Cough</h4>
+        <div>
+          <ul>
+            <li>Robitussin (guaifenesin)—after 12 weeks pregnant </li>
+            <li>Delsym (dextromethorphan) </li>
+            <li>Any over the counter cough/throat lozenge </li>
+          </ul>
+        </div>
+        <h4>Sinus tenderness</h4>
+        <div>
+          <ul>
+            <li>Vaporizer/Vicks VapoRub </li>
+            <li>Antihistamines as above </li>
+            <li>Saline nasal spray/irrigation </li>
+            <li>Afrin (oxymetazoline) </li>
+            <li>Warm packs to eyes and sinuses </li>
+          </ul>
+        </div>
+        <h4>Heartburn/Gastroesophageal Reflux Disease (GERD)</h4>
+        <div>
+          <ul>
+            <li>Tums </li>
+            <li>Maalox </li>
+            <li>Pepcid (famotidine) </li>
+            <li>Zantac (ranitidine) </li>
+            <li>Prescription: <em>nexium</em> (esomeprazole), <em>protonix</em> (pantoprazole), available in some cases and considered safe during pregnancy </li>
+            <li>Pepto Bismol: <strong>do not use during pregnancy</strong> </li>
+          	<li>Prilosec</li>
+          </ul>
+        </div>
+        <h4>Nausea and vomiting*</h4>
+        <div>
+          <ul>
+            <li><em>Strategies
+              </em>
+              <ul>
+                <li>Avoid odors and triggers </li>
+                <li>Avoid spicy and fatty foods </li>
+                <li>Omit iron supplement </li>
+                <li>Eat bland, dry high protein foods </li>
+                <li>Eat small frequent meals with fluids between </li>
+                <li>Avoid an empty stomach </li>
+                <li>Keep crackers at bedside; eat before rising </li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li><em>Alternative therapies</em>
+              <ul>
+                <li>Ginger: ginger ale or capsules (250mg 4 times per day taken orally) </li>
+                <li>Vitamin B6 </li>
+                <li>P6 elastic wristband (acupuncture point)</li>
+                </ul>
+            </li>
+            <li><em>Antihistamines available without a script</em>    <ul>
+                <li>Dramamine (dimenhydrinate) 50mg 4 times per day </li>
+                <li>Antivert (meclizine) 25mg 3 times per day </li>
+                <li>Vistaril (hydroxyzine) 25-50mg 4 times per day </li>
+                <li>Benadryl (diphenhydramine) 25mg 3 times per day </li>
+              </ul>
+            </li>
+            <li><em>Prescription medicines available if indicated</em></li>
+          </ul>
+          <p>* adapted from Niebyl. "Management of Nausea and Vomiting in Pregnancy: A Clinical Perspective". Academy for Healthcare Education. Nov. 2002 pp.6-9.</p>
+        </div>
+        <h4>Diarrhea</h4>
+        <div>
+          <p>(You may follow these instructions if symptoms are acute and no alert signs such as fever, bloody diarrhea or weight loss have occurred.)</p>
+          <ul>
+            <li>Clear liquids/bland diet until symptoms resolve </li>
+            <li>Imodium AD </li>
+          </ul>
+        </div>
+        <h4>Constipation</h4>
+        <div>
+          <ul>
+            <li>Water consumption should be at least 8-10 glasses of water per day </li>
+            <li>High fiber diet </li>
+            <li>Fiber laxatives such as Metamucil, Citrucel, Fibercon </li>
+            <li>Milk of magnesia </li>
+            <li>Magnesium Citrate—120 to 240 mL orally </li>
+            <li>Mineral oil—may decrease absorption of fat soluble vitamins </li>
+            <li>Glycerine suppositories </li>
+          	<li>Miralax </li>
+          	<li>Colace </li>
+          </ul>
+        </div>
+        <h4>Hemorrhoids</h4>
+        <div>
+          <ul>
+            <li>Increase fluids </li>
+            <li>Increase fiber through diet or supplementation as above for constipation </li>
+            <li>Avoid straining with defecation and avoid prolonged times on the toilet </li>
+            <li>Use sitz baths to soothe </li>
+            <li>Try topical therapies—will not cure, but may decrease symptoms, for example, Tucks, Preparation H, Hydrocortisone and epi-foam</li>
+          </ul>
+        </div>
+        <h4>Heartburn/Gastroesophageal Reflux Disease (GERD)</h4>
+        <div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

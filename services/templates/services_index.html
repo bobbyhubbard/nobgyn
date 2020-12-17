@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+{% block pageId %}services-idx{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/services.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/services.jpg' %}">
+      <img src="{% static 'images/JPGs/services.jpg' %}" alt="Services" class="img-responsive">
+    </picture>
+    <div class="overlay_centered white"><h1>Services</h1></div>
+  </div>
+
+  <div class="tagline container">
+    <div class="row justify-content-md-center">
+      <div class="col"></div>
+  </div>
+</header>
+<section class="tagline container pt-5">
+  <div class="row justify-content-md-center">
+    <div class="col">
+      <p>Northland Obstetrics & Gynecology provides outstanding patient care to women of
+        all ages in the Liberty and Kansas City areas.</p>
+      <p>Our board-certified doctors are independent practitioners and experts in the
+        field of women’s health. We offer personalized obstetric, gynecologic and
+        fertility care that is tailored to meet the needs of each individual patient.
+        We believe in putting patients first, working with you to determine the best
+        course of treatment.</p>
+    </div>
+  </div>
+</section>
+<section class="px-5 py-5">
+  <div class="container-lg">
+    <div class="row">
+      {% for service in services %}
+      <div class="col-5 service-item">
+          <img src="/{{ service.icon }}" alt="{{ service.slug }}" class="service-icon" width="60">
+          <div class="service-summary">
+            <a href="{{ service.get_absolute_url }}"><h2>{{ service.name }}</h2></a>
+            <p>{{ service.summary_desc }}</p>
+            <p><a href="{{ service.get_absolute_url }}">Learn More &rarr;</a>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

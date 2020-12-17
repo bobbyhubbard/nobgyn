@@ -1,0 +1,68 @@
+{% load static %}
+<footer class="container-xl my-4">
+  <div class="col px-2 logo-mobile">
+    <a href="https://northlandobgyn.com"><img src="{% static 'images/northland-obgyn-logo.svg' %}" width="225" alt="" loading="lazy"/></a>
+  </div>
+    <div class="row mx-3 px-5 py-2">
+      <div class="col px-2">
+        <h4>Hours</h4>
+        <p class="line mr-5"></p>
+        {% for location in locations %}
+          {% if location.isPrimary %}
+          {% autoescape off %}
+          <p>{{ location.appointment_text }}</p>
+          <p>{{ location.phone }}</p>
+          {% endautoescape %}
+          {% endif %}
+        {% endfor %}
+        <h4>Locations</h4>
+        <p class="line mr-5"></p>
+        {% for location in locations %}
+          <p><a href="{{ location.get_absolute_url }}">{{ location.name }}</a></p>
+        {% endfor %}
+      </div>
+      <div class="col px-2">
+        <h4>Providers</h4>
+        <p class="line mr-5"></p>
+        {% for provider in providers %}
+          <p><a href="{{ provider.get_absolute_url }}">{{ provider.name }}</a>
+
+        {% endfor %}
+      </div>
+      <div class="col px-2">
+        <h4>Services</h4>
+        <p class="line mr-5"></p>
+        {% for service in services %}
+          <p><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></p>
+        {% endfor %}
+        <h4>Patient Resources</h4>
+        <p class="line mr-5"></p>
+        {% for resource in resources %}
+          {% if resource.external_link %}
+          <p><a target="{{resource.slug}}" href="{{ resource.external_link }}">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></p>
+          {% elif resource.form_content %}
+            <p><a href="#" target="billpay" onclick="$('form[name=&quot;billpay&quot;]').submit(); event.preventDefault()">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></p>
+            {% autoescape off %}{{ resource.form_content }}{% endautoescape %}
+          {% else %}
+          <p><a href="{{ resource.get_absolute_url }}">{{ resource.name }}</a></p>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="col px-2 branding">
+        <div class="pb-4 pt"><a href="https://northlandobgyn.com"><img src="{% static 'images/northland-obgyn-logo.svg' %}" width="225" alt="" loading="lazy"/></a></div>
+        <p class="social"><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/northlandobgyn" target="_blank">facebook.com/northlandobgyn</a></p>
+        <p>&copy; {% now "Y" %} Northland Obstetrics &amp; Gynecology, Inc.</p>
+        <p>A Division of <a href="https://www.signaturemedicalgroup.com/" target="_blank">Signature Medical Group of KC, PA</a></p>
+        {% for location in locations %}
+          {% if location.isPrimary %}
+          {% autoescape off %}
+          <p>{{ location.address1 }}<br/>
+          {{ location.address2 }}<br/>
+          {{ location.city_state_zip }}</p>
+          {% endautoescape %}
+          {% endif %}
+        {% endfor %}
+        <p><a href="terms">Terms of Use</a></p>
+      </div>
+    </div>
+</footer>
