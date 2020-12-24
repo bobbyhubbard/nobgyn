@@ -371,7 +371,7 @@ span.file_type {
   opacity: 0.5;
 }
 
-.service_detail .services li::before {
+.service_detail .services li::before, .massage-therapy .benefits li::before, .safe_meds section li::before {
   content: "\2022";
   display: inline-block;
   width: 1em;
@@ -408,14 +408,6 @@ span.file_type {
   padding-right: 0;
 }
 
-.massage-therapy .benefits li::before {
-  content: "\2022";
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-  padding-top: 15px;
-  color: #50D3B2;
-}
 .massage-therapy em {
   position: absolute;
   top: 140px;
@@ -471,6 +463,12 @@ span.file_type {
 .resource-summary small {
   font-size: 15px;
   font-weight: bold;
+}
+.safe_meds h4 {
+  font-size: 20px;
+  font-family: Open Sans;
+  font-weight: bold;
+  line-height: 34px;
 }
 
 .forms_information section {

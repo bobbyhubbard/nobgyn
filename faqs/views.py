@@ -6,13 +6,13 @@ from django.conf import settings
 
 from header.views import renderHeader
 from footer.views import renderFooter
-from faqs.models import Faq
+from faqs.models import FAQ
 
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
 def faqDetail(request, slug):
     try:
-        faq = Faq.objects.get(slug__iexact=slug)
+        faq = FAQ.objects.get(slug__iexact=slug)
     except Service.DoesNotExist:
         # handle redirect here for old paths?
         raise Http404("Sorry, this FAQ does not exist. ")
@@ -26,7 +26,7 @@ def faqDetail(request, slug):
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
 def index(request):
-    faqs = Faq.objects.all()
+    faqs = FAQ.objects.all()
     banners = Banner.objects.all()
 
     context = {

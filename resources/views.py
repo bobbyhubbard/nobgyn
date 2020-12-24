@@ -6,7 +6,7 @@ from django.conf import settings
 
 from header.views import renderHeader
 from footer.views import renderFooter
-from resources.models import Resource, Form, FAQ, Info, HealthPlan
+from resources.models import Resource, Form, FAQLink, Info, HealthPlan
 
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
@@ -14,7 +14,7 @@ def forms_information(request):
     try:
         resource = Resource.objects.get(slug__iexact="forms_information")
         forms = Form.objects.all()
-        faqs = FAQ.objects.all()
+        faqs = FAQLink.objects.all()
         infos = Info.objects.all()
 
     except Resource.DoesNotExist:
@@ -77,7 +77,7 @@ def index(request):
 
     resources = Resource.objects.all()
     forms = Form.objects.all()
-    faqs = FAQ.objects.all()
+    faqs = FAQLink.objects.all()
     infos = Info.objects.all()
 
     context = {

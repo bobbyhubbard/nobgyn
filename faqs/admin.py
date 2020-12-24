@@ -1,17 +1,17 @@
 from django.contrib import admin
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
-from .models import Faq
+from faqs.models import FAQ
 from django.db import models
 
 
-class FaqResource(resources.ModelResource):
+class FAQResource(resources.ModelResource):
     class Meta:
-        model = Faq
+        model = FAQ
 
 
-class FaqAdmin(ImportExportModelAdmin):
-    resource_class = FaqResource
+class FAQAdmin(ImportExportModelAdmin):
+    resource_class = FAQResource
 
 
-admin.site.register(Faq, FaqAdmin)
+admin.site.register(FAQ, FAQAdmin)

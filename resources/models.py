@@ -71,7 +71,7 @@ class Info(models.Model):
         return self.name
 
 
-class FAQ(models.Model):
+class FAQLink(models.Model):
 
     view_order = models.IntegerField(
         default=1, help_text='The display order of this FAQ link')

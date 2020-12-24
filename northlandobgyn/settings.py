@@ -56,11 +56,10 @@ INSTALLED_APPS = [
     'header',
     'footer',
     'providers',
-    'faqs',
     'services',
     'locations',
     'resources',
-
+    'faqs',
 ]
 
 MIDDLEWARE = [
@@ -90,8 +89,8 @@ TEMPLATES = [
             BASE_DIR / 'northlandobgyn' / 'templates',
             BASE_DIR / 'providers' / 'templates',
             BASE_DIR / 'services' / 'templates',
-            BASE_DIR / 'faqs' / 'templates',
             BASE_DIR / 'resources' / 'templates',
+            BASE_DIR / 'faqs' / 'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
