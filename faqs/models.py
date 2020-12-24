@@ -13,6 +13,8 @@ class FAQ(models.Model):
     answer = models.TextField(help_text='FAQ Response (html)')
     special = models.TextField(
         help_text='FAQ Response special area (html)', blank=True, null=True)
+    old_path = models.CharField(
+        max_length=50, help_text='If moved from old site, this is the old faq id (eg "ob_q5")', blank=True, default='')
 
     @ property
     def type(self):

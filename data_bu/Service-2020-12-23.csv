@@ -1,0 +1,30 @@
+id,slug,view_order,name,icon,summary_desc,desc,services,sidebar
+1,obstetrics,1,Obstetrics,static/images/SVGs/icon-obstetrics_ahvk9u6.svg,"Before, during and after your pregnancy, you’ll know you are well cared for and that you can trust your doctor to provide the best possible care for you and your baby.","Obstetrics is a subset of women’s health that focuses on pregnancy and childbirth. Our physicians deliver more than 1,200 babies a year – their experience, along with their expertise, is why so many women choose Northland Obstetrics &amp; Gynecology. Before, during and after your pregnancy, you’ll know you are well cared for and that you can trust your doctor to provide the best possible care for you and your baby.","<ul>
+<li>Management and delivery of normal and high-risk pregnancies</li>
+<li>Antepartum testing: nonstress testing, biophysical profiles and uterine artery doppler velocimetry</li>
+<li>Ultrasound services routine and three-dimensional imaging</li>
+<li>Laboratory services on-site</li>
+</ul>","<p><a href="""">Information for New Obstetrics Patients</a> <span class=""file_type"">(PDF)</span></p>
+<p><a href="""">Safe Medicines During Pregnancy</a></p>
+<p><a href="""">Obstetrics FAQs</a></p>
+<p><a href="""">Postoperative FAQs</a></p>"
+2,gynecology,2,Gynecology,static/images/icons/icon-gynecology.svg,"From well woman visits and adolescent gynecology to menopausal services and more, we are committed to providing comprehensive health services to every woman, regardless of age.","Gynecology is the study and care of the health of the female reproductive system. From Well Woman visits and adolescent gynecology to menopausal services and preventative care, Northland Obstetrics & Gynecology is committed to providing comprehensive health services to every woman, regardless of age.
+The physicians of Northland Obstetrics &amp; Gynecology who specialize in OB-GYN care are committed to the promotion of women’s health.","<ul>
+<li>Annual exams and well woman care</li>
+<li>Bone density determination</li>
+<li>Cystometric testing for voiding abnormalities</li>
+<li>Contraception counseling and management</li>
+<li>Management of gynecologic problems:
+<ul>
+      <li>Abnormal uterine bleeding: postmenopausal, fibroids and polyps</li>
+<li>Polycystic ovarian syndrome</li>
+<li>Chronic pelvic pain: endometriosis and interstitial cystitis</li>
+<li>Pelvic organ prolapse and urinary incontinence</li>
+<li>Menopausal management: hormone replacement issues and osteoporosis</li>
+<li>Abnormal pap smears</li>
+<li>Vaginal discharge and irritation</li>
+<li>Female infertility</li>
+    </ul></li>
+</ul>","<p><a href="""">Gynecology FAQs</a></p>
+<p><a href="""">Postoperative FAQs</a></p>"
+3,massage-therapy,3,Massage Therapy,static/images/icons/icon-massage-therapy.svg,"Massage therapy helps you relax, re-align and rejuvenate. There are many positive aspects to receiving massage therapy on an ongoing basis, and with the busy lives we lead, we can all benefit from a little stress-management.",desc,Massage services,Massage sidebar
