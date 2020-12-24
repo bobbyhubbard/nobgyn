@@ -193,6 +193,7 @@ section .container, section .container-xl, .providers .g-bg h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 90%;
 }
 
 .overlay_centered h1 {

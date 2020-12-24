@@ -1,33 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {% block title %}<title>Local Library</title>{% endblock %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <!-- Add additional CSS in static file -->
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-2">
-        {% if banners %}
-        <h2>{% for banner in banners %}
-          <li>{% autoescape off %}
-                {{ banner.message }}
-              {% endautoescape %}
-          </li>
-        {% endfor %}</h2>{% endif %}
-      </div>
-      <div class="col-sm-10 ">FAQ
-
-        {% block content %}
-        <div>Q: {{ faq.question }}</div>
-        <div>A: {% autoescape off %}{{ faq.answer }}{% endautoescape %}</div>
-        {% endblock %}</div>
+{% extends "base_generic.html" %}
+{% block title %}{{resource.name}}{% endblock %}
+{% block pageId %}resource_detail {{resource.slug}}{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="{{provider.slug}}" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <span>{{ faq.type }} FAQs</span>
+      <h1>{{ faq.question }}</h1>
+    </div>
+    <div class="tagline container"><a href="{%url faq.url %}">&larr; Back to {{ faq.type }} FAQs</a></div>
+  </div>
+</header>
+<section class="tagline container pt-5">
+  <div class="row justify-content-md-center">
+    <div class="col">
+      {% autoescape off %}{{faq.answer}}{% endautoescape %}
+      {% autoescape off %}{{faq.special}}{% endautoescape %}
     </div>
   </div>
-</body>
-</html>
+</section>
+{{ footerFragment }}\
+{% endblock %}

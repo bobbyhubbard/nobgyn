@@ -6,23 +6,31 @@ from django.utils import http
 class FAQ(models.Model):
     # Fields
     slug = models.CharField(
-        max_length=25, help_text='URL Path Slug', default='')
+        max_length=50, help_text='URL Path Slug', default='')
     view_order = models.IntegerField(
         default=1, help_text='The display order of this FAQ')
     question = models.TextField(help_text='Frequently asked Question')
     answer = models.TextField(help_text='FAQ Response (html)')
     special = models.TextField(
-        help_text='FAQ Response special area (html)')
-    # Fields
+        help_text='FAQ Response special area (html)', blank=True, null=True)
+
+    @ property
+    def type(self):
+        return dict(self.faq_types).get(self.faq_type)
+
+    @ property
+    def url(self):
+        return "faqs:" + dict(self.faq_types).get(self.faq_type)
+
     faq_types = (
-        (1, "Obstetric"),
+        (1, "Obstetrics"),
         (2, "Gynecology"),
         (3, "Postoperative"),
     )
     faq_type = models.IntegerField(choices=faq_types, default=1)
 
     class Meta:
-        ordering = ['view_order']
+        ordering = ['faq_type', 'view_order']
 
     # Methods
     def __str__(self):

@@ -19,18 +19,39 @@ def faqDetail(request, slug):
 
     context = {
         'faq': faq,
+        'headerFragment': renderHeader()
     }
+    context['footerFragment'] = renderFooter(context)
 
     return render(request, 'faq_detail.html', context=context)
 
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
-def index(request):
-    faqs = FAQ.objects.all()
-    banners = Banner.objects.all()
+def index(request, type="1"):
+    if type:
+        faqs = FAQ.objects.filter(faq_type=type)
+    else:
+        faqs = FAQ.objects.all()
 
     context = {
         'faqs': faqs,
+        'headerFragment': renderHeader()
     }
+    context['footerFragment'] = renderFooter(context)
 
     return render(request, 'faqs_index.html', context=context)
+
+
+@cache_page(settings.CACHE_VIEW_EXPIRATION)
+def ob(request):
+    return index(request, "1")
+
+
+@cache_page(settings.CACHE_VIEW_EXPIRATION)
+def gyn(request):
+    return index(request, "2")
+
+
+@cache_page(settings.CACHE_VIEW_EXPIRATION)
+def postop(request):
+    return index(request, "3")
