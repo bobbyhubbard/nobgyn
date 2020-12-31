@@ -16,7 +16,8 @@ def index(request):
 
     context = {
         'locations': locations,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 

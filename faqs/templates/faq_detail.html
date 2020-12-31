@@ -1,6 +1,12 @@
 {% extends "base_generic.html" %}
-{% block title %}{{resource.name}}{% endblock %}
-{% block pageId %}resource_detail {{resource.slug}}{% endblock %}
+{% block title %}{{faq.question}}{% endblock %}
+{% block pageId %}faq_detail {{faq.slug}}{% endblock %}
+{% block head %}
+  <link href="/static/css/jquery-ui.min.css" rel="stylesheet">
+  <link href="/static/css/jquery-ui.structure.min.css" rel="stylesheet">
+  <link href="/static/css/jquery-ui.theme.min.css" rel="stylesheet">
+  <script defer src="/static/js/jquery-ui-1.12.1.custom.min.js"></script>
+{% endblock %}
 {% block content %}
 {{ headerFragment }}
 {% load static %}
@@ -26,5 +32,5 @@
     </div>
   </div>
 </section>
-{{ footerFragment }}\
+{{ footerFragment }}
 {% endblock %}

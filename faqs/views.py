@@ -19,7 +19,8 @@ def faqDetail(request, slug):
 
     context = {
         'faq': faq,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 
@@ -35,7 +36,9 @@ def index(request, type="1"):
 
     context = {
         'faqs': faqs,
-        'headerFragment': renderHeader()
+        'type': FAQ.faqTypeName(type),
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 

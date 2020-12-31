@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 # Create your models here.
 
 
@@ -12,7 +12,7 @@ class Resource(models.Model):
     name = models.CharField(
         max_length=50, help_text='Resource name', default='')
     icon = models.FileField(
-        help_text='Icon image for resource', upload_to='static/images/icons', default='')
+        help_text='Icon image for resource', upload_to='icons', default='')
     isLink = models.BooleanField(
         help_text='Is this menu item an external link?', default=False)
     isFormLink = models.BooleanField(
@@ -41,10 +41,16 @@ class Form(models.Model):
         default=1, help_text='The display order of this form')
     name = models.CharField(
         max_length=50, help_text='Form name', default='')
-    file = models.FileField(upload_to='forms/', blank=True, default='')
+    file = models.FileField(
+        upload_to='forms', blank=True, default='')
     file_type = models.CharField(max_length=4, blank=True, default='')
     link = models.URLField(
         help_text='Link (optional)', max_length=200, blank=True, default='')
+
+    @ property
+    def filePath(self):
+        if self.file:
+            return '/static/uploads' + self.file.url
 
     class Meta:
         ordering = ['view_order']
@@ -59,10 +65,16 @@ class Info(models.Model):
         default=1, help_text='The display order of this information link')
     name = models.CharField(
         max_length=50, help_text='Link name', default='')
-    file = models.FileField(upload_to='info/', blank=True, default='')
+    file = models.FileField(upload_to='info',
+                            blank=True, default='')
     file_type = models.CharField(max_length=4, blank=True, default='')
-    link = models.URLField(
-        help_text='Link (optional)', max_length=200, blank=True, default='')
+    link = models.CharField(
+        help_text='Relative Link (optional)', max_length=200, blank=True, default='')
+
+    @ property
+    def filePath(self):
+        if self.file:
+            return '/static/uploads' + self.file.url
 
     class Meta:
         ordering = ['view_order']
@@ -77,10 +89,15 @@ class FAQLink(models.Model):
         default=1, help_text='The display order of this FAQ link')
     name = models.CharField(
         max_length=50, help_text='FAQ Link name', default='')
-    file = models.FileField(upload_to='faq/', blank=True, default='')
+    file = models.FileField(upload_to='static/uploads', blank=True, default='')
     file_type = models.CharField(max_length=4, blank=True, default='')
-    link = models.URLField(
-        help_text='Link (optional)', max_length=200, blank=True, default='')
+    link = models.CharField(
+        help_text='Relative link (optional. ex /faqs/obstetrics)', max_length=200, blank=True, default='')
+
+    @ property
+    def filePath(self):
+        if self.file:
+            return '/static/uploads' + self.file.url
 
     class Meta:
         ordering = ['view_order']

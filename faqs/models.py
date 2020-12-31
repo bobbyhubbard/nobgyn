@@ -24,6 +24,9 @@ class FAQ(models.Model):
     def url(self):
         return "faqs:" + dict(self.faq_types).get(self.faq_type)
 
+    def faqTypeName(type):
+        return dict(FAQ.faq_types).get(int(type))
+
     faq_types = (
         (1, "Obstetrics"),
         (2, "Gynecology"),

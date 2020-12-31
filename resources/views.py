@@ -25,7 +25,8 @@ def forms_information(request):
         'forms': forms,
         'faqs': faqs,
         'infos': infos,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 
@@ -54,22 +55,12 @@ def health_plans(request):
     context = {
         'resource': resource,
         'plans': plans,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 
     return render(request, 'health_plans.html', context=context)
-
-
-@cache_page(settings.CACHE_VIEW_EXPIRATION)
-def safe_meds(request):
-
-    context = {
-        'headerFragment': renderHeader()
-    }
-    context['footerFragment'] = renderFooter(context)
-
-    return render(request, 'safe_meds.html', context=context)
 
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
@@ -85,7 +76,8 @@ def index(request):
         'forms': forms,
         'faqs': faqs,
         'infos': infos,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 

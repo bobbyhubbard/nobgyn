@@ -19,7 +19,8 @@ def serviceDetail(request, slug):
 
     context = {
         'service': service,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 
@@ -35,7 +36,8 @@ def index(request):
 
     context = {
         'services': services,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 

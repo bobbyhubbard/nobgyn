@@ -26,7 +26,8 @@ def providerDetail(request, slug):
         'schoolRels': schoolRels,
         'certOrgRels': certOrgRels,
         'vids': vids,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 
@@ -42,7 +43,8 @@ def index(request):
 
     context = {
         'providers': providers,
-        'headerFragment': renderHeader()
+        'headerFragment': renderHeader(),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)
 

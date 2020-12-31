@@ -50,6 +50,10 @@ h3 {
    list-style: none;
  }
 
+ li {
+   line-height: 25px;
+ }
+
 i {
   color: #50D3B2;
   padding-right: 5px;
@@ -372,7 +376,9 @@ span.file_type {
   opacity: 0.5;
 }
 
-.service_detail .services li::before, .massage-therapy .benefits li::before, .safe_meds section li::before {
+.service_detail .services li::before,
+.massage-therapy .benefits li::before,
+.faq_detail section li::before {
   content: "\2022";
   display: inline-block;
   width: 1em;
@@ -499,6 +505,22 @@ span.file_type {
 
 .health_plans h3 {
   padding-top: 30px;
+}
+.faq_detail .ui-accordion-header {
+  cursor: pointer;
+}
+.faq_detail .icon {
+  left: 200px;
+}
+.faq_detail .input-field {
+  padding-left: 5px;
+  color: #50D3B2;
+}
+.faq_detail section ul {
+  padding-top:0;
+}
+#datepicker {
+  cursor: pointer;
 }
 @media (min-width: 1200px) {
   .container-xl {
