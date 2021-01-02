@@ -24,18 +24,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '%2t!z5vw11(t@fxbln&zvmfvv*pptk*p2mv5^*va&%k9n&we8g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # 172.26.13.103
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.13.103', '3.22.239.246']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.13.103', '3.22.239.246',
+                 'test.northlandobgyn.com', 'www.northlandobgyn.com', 'northlandobgyn.com']
 
 # in-memory cache
 CACHES = {
-    'default': {
+    'sd': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
     },
-    'b': {
+    'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
     }
 }
@@ -52,6 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.redirects',
     'import_export',
     'header',
     'footer',
@@ -70,6 +73,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware'
 ]
 
 # SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -77,6 +81,8 @@ MIDDLEWARE = [
 # SECURE_REFERRER_POLICY = True
 # SECURE_SSL_REDIRECT = True
 
+# Site id
+SITE_ID = 3
 
 ROOT_URLCONF = 'northlandobgyn.urls'
 
@@ -159,9 +165,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = 'static/uploads'
 STATIC_ROOT = BASE_DIR
 STATICFILES_DIRS = [
-    "static",
-    'static/uploads',
-    '/var/www/static/',
-    'uploads'
+    'static'
 ]
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'

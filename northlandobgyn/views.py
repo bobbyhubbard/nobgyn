@@ -28,3 +28,14 @@ def index(request):
     context['footerFragment'] = renderFooter(context)
 
     return render(request, 'index.html', context=context)
+
+
+@cache_page(settings.CACHE_VIEW_EXPIRATION)
+def terms(request):
+    context = {
+        'headerFragment': renderHeader(request),
+        'CANONICAL_PATH': request.build_absolute_uri(request.path),
+    }
+    context['footerFragment'] = renderFooter(context)
+
+    return render(request, 'terms.html', context=context)

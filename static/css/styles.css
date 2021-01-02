@@ -332,11 +332,11 @@ header .overlay_centered span {
 }
 
 .service-item {
-  padding-bottom: 35px;
+  padding-bottom: 20px;
 }
 
 .service-item .service-summary {
-  margin-left: 60px;
+
 }
 
 .service_detail section {
@@ -361,12 +361,13 @@ span.file_type {
 
 .service_detail .services li::before,
 .massage-therapy .benefits li::before,
-.faq_detail section li::before {
+.faq_detail section li::before,
+.terms section li::before {
   content: "\2022";
   display: inline-block;
   width: 1em;
   margin-left: -1em;
-  padding-top: 15px;
+  padding-top: 10px;
   color: #50D3B2;
 }
 .massage-therapy .benefits {
@@ -466,7 +467,8 @@ span.file_type {
   border: 2px solid #0D7359;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 500px;
+  width: 90%;
+  max-width: 400px;
 }
 .health_plans #filter-cont {display: none;}
 
@@ -503,6 +505,13 @@ span.file_type {
 }
 .vids {
   padding-top: 30px;
+}
+.terms section ul {
+  padding-top: 0;
+}
+.map iframe {
+  width: 100%;
+  max-width: 300px;
 }
 @media (min-width: 1200px) {
   .container-xl {
@@ -562,6 +571,9 @@ span.file_type {
       font-size: 16px;
       line-height: 18px;
     }
+    .container-xl {
+      padding: 0 15px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -577,8 +589,7 @@ span.file_type {
      font-size: 22px;
     }
     .services-idx .service-item {
-        padding-bottom: 15px;
-        margin-left: 0px;
+
     }
    .service_detail .services {
      font-size: 18px;
@@ -639,9 +650,6 @@ span.file_type {
   .desktop {
     display: none;
   }
-  .container-xl {
-    padding: 0 2px;
-  }
   .locations-idx .highlighted_content {
     background: #F2F8F7;
     padding: 4px;
@@ -649,7 +657,7 @@ span.file_type {
     margin-bottom: 10px;
   }
   .locations-idx .highlighted_content h2 {
-    padding-bottom: 10px;
+    padding: 15px 0;
   }
   .service-item {
     margin-left: 5px;

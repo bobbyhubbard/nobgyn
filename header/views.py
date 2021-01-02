@@ -14,5 +14,4 @@ def renderHeader(request):
         'isActive_' + resolve(request.path).app_name: 'active'
     }
     template = get_template("header.html")
-    print(context)
     return template.render(context)

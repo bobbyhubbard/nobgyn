@@ -27,7 +27,7 @@
           <li class="nav-item {{ isActive_locations }}">
             <a class="nav-link" href="{% url 'locations:index' %}">Locations</a>
           </li>
-          <li class="nav-item {{ isActive_resources }}">
+          <li class="nav-item {{ isActive_resources }} {{ isActive_faqs }}">
             <a class="nav-link" href="{% url 'resources:index' %}">Patient Resources</a>
           </li>
         </ul>

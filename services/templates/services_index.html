@@ -32,19 +32,29 @@
     </div>
   </div>
 </section>
-<section class="pl-2">
+<section>
   <div class="container-lg">
-    <div class="row">
+    <div class="row  justify-content-md-center">
       {% for service in services %}
-      <div class="col-xl-5 service-item">
-          <img src="/{{ service.icon }}" alt="{{ service.slug }}" class="service-icon" width="60">
-          <div class="service-summary">
+      <div class="col-md-5 col-sm-12 service-item">
+        <div class="row">
+          <div class="col-3"><img src="/{{ service.icon }}" alt="{{ service.slug }}" class="service-icon" width="60"></div>
+          <div class="col-9 service-summary">
             <a href="{{ service.get_absolute_url }}"><h2>{{ service.name }}</h2></a>
             <p>{{ service.summary_desc }}</p>
             <p><a href="{{ service.get_absolute_url }}">Learn More &rarr;</a>
           </div>
+        </div>
       </div>
       {% endfor %}
+      <div class="col-md-5 col-sm-12 service-item">
+        <div class="row">
+          <div class="col-3">&nbsp;</div>
+          <div class="col-9 service-summary">
+            &nbsp;
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

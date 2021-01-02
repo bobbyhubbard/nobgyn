@@ -20,7 +20,7 @@
 <section>
   <div class="container-xl">
     <div class="row justify-content-md-center">
-      <div class="col-sm-8">
+      <div class="col-md-8">
         {% autoescape off %}
         <div class="container">
           <div class="row justify-content-md-center">
@@ -46,7 +46,7 @@
         {% endautoescape %}
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-md-4">
         <div class="container">
           <div class="row title">
             <div class="col">
@@ -61,20 +61,21 @@
               </div>
             </div>
           </div>
-          <div class="row pt-4">
-            <div class="col embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item"
+          <div class="row">
+            <div class="col map">
+                <iframe class=""
                   frameborder="0" style="border:0"
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhsOOBKF5HaptHgpR1tnmXoPF2CxhVLcg&q={{ location.address1 }} {{ location.address2 }} {{ location.city_state_zip }}" allowfullscreen>
                 </iframe>
-            <div class="row">
-              <div class="col-1"><i class="fal fa-map-marker-alt"></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1"><i class="fal fa-map-marker-alt"></i></div>
               <div class="col">
               <p>{{ location.address1 }}<br/>
                 {{ location.address2 }}<br/>
                 {{ location.city_state_zip }}
               </p>
-              </div>
             </div>
           </div>
         </div>

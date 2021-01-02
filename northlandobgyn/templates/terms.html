@@ -1,0 +1,42 @@
+{% extends "base_generic.html" %}
+{% block title %}Terms{% endblock %}
+{% block pageId %}terms{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <h1>Terms of Use Policy</h1>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <p><strong>CONTENT DISCLAIMER</strong><br>
+        <p>The recommendations and information provided by this website are for educational purposes only.
+          This website does not contain comprehensive coverage of the topics addressed, and is not a
+          substitute for direct consultation with your health care provider. Always consult a health care
+          provider regarding your specific condition. Trademarks referred to are the property of their
+          respective owners.</p>
+
+        <p><strong>Contact Information</strong><br>
+        If you have any questions, please contact us at the following:</p>
+
+        <p>Email: <a href="mailto:info@northlandobgyn.ccom">info@northlandobgyn.ccom</a><br>
+        Phone number: 816-781-7820<br>
+        Address: Northland Obstetrics & Gynecology, 2529 Glenn Hendren Dr., Medical Plaza East Suite 200, Liberty, MO 64068</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

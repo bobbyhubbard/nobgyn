@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+{% block title %}Terms{% endblock %}
+{% block pageId %}terms{% endblock %}
+{% block content %}
+{{ headerFragment }}
+{% load static %}
+<header>
+  <div class="img-container">
+    <picture class="img-responsive">
+      <source srcset="{% static 'images/JPGs/header.sm.jpg' %}" media="(max-width: 700px)">
+      <source srcset="{% static 'images/JPGs/header.jpg' %}">
+      <img src="{% static 'images/JPGs/header.jpg' %}" alt="" class="img-responsive">
+    </picture>
+    <div class="overlay_centered">
+      <h1>Oops. Thank is not supposed to happen</h1>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col">
+        Apologies, but something went wrong with the page you requested. We'll look into it.
+      </div>
+    </div>
+  </div>
+</section>
+{{ footerFragment }}
+{% endblock %}

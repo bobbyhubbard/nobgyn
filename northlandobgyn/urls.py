@@ -23,11 +23,11 @@ from . import views
 app_name = 'nobgyn'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('terms', views.terms, name='terms'),
     path('admin/', admin.site.urls),
     path('providers/', include('providers.urls')),
     path('services/', include('services.urls')),
     path('locations/', include('locations.urls')),
     path('resources/', include('resources.urls')),
-    path('faqs/', include('faqs.urls')),
-
+    path('faqs/', include('faqs.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

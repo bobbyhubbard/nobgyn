@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 from django.views import generic
 from django.views.decorators.cache import cache_page
@@ -43,6 +43,12 @@ def index(request, type="1"):
     context['footerFragment'] = renderFooter(context)
 
     return render(request, 'faqs_index.html', context=context)
+
+
+@cache_page(settings.CACHE_VIEW_EXPIRATION)
+def redirectFAQ(request, old_path):
+    faq = FAQ.objects.get(old_path__iexact=old_path)
+    return redirect(faq.get_absolute_url(), permanent=True)
 
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
