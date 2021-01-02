@@ -20,7 +20,18 @@
 </header>
 <section class="container">
   <div class="row justify-content-md-center">
-    <div class="left_col">{% autoescape off %}
+    <div class="col mobile">
+      <picture class="img-responsive">
+        <source srcset="/{{ provider.image_sml }}" media="(max-width: 700px)">
+        <source srcset="/{{ provider.image }}">
+        <img src="/{{ provider.image }}" alt="{{ provider.slug }}" class="img-responsive">
+      </picture>
+      <div>
+        <p class="name"><a href="{{ provider.get_absolute_url }}">{{ provider.name }}</a></p>
+        <p>{{ provider.focus }}</p>
+      </div>
+    </div>
+    <div class="col-sm-8">{% autoescape off %}
       {{provider.bio}}{% endautoescape %}
       <h2>Specialties &amp; Areas of Interest</h2>
       {{provider.specialty}}
@@ -33,18 +44,18 @@
       <p>{% autoescape off %}{{certOrgRel.certOrg}} {% endautoescape %}</p>
       {% endfor %}
     </div>
-    <div class="right_col">
-      <picture class="img-responsive">
+    <div class="col-sm-4">
+      <picture class="img-responsive desktop">
         <source srcset="/{{ provider.image_sml }}" media="(max-width: 700px)">
         <source srcset="/{{ provider.image }}">
         <img src="/{{ provider.image }}" alt="{{ provider.slug }}" class="img-responsive">
       </picture>
       <div class="vids">
         {% for vid in vids %}
-        <div>
-          <iframe width="471" height="265" src="{{vid.video_url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <span>{{vid.name}}</span>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="{{vid.video_url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <p>{{vid.name}}</p>
         {% endfor %}
       </div>
     </div>

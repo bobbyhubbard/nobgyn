@@ -22,7 +22,7 @@ def index(request):
         'services': services,
         'locations': locations,
         'resources': resources,
-        'headerFragment': renderHeader(),
+        'headerFragment': renderHeader(request),
         'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
     context['footerFragment'] = renderFooter(context)

@@ -17,21 +17,23 @@
     </div>
   </div>
 </header>
-<section class="container-lg">
-  <div class="row justify-content-md-center">
-    <div class="left_col">
-      {% autoescape off %}
-      <div>{{ service.desc }}</div>
-      <div class="services">
-        <h2>Services</h2>
-        <div class="services_content">{{ service.services }}</div>
+<section>
+  <div class="container-lg">
+    <div class="row justify-content-md-center">
+      <div class="col-xl-8">
+        {% autoescape off %}
+        <div>{{ service.desc }}</div>
+        <div class="services">
+          <h2>Services</h2>
+          <div class="services_content">{{ service.services }}</div>
+        </div>
+        {% endautoescape %}
       </div>
-      {% endautoescape %}
-    </div>
-    <div class="right_col">
-      <h4>Information</h4>{% autoescape off %}
-      {{ service.sidebar }}
-      {% endautoescape %}
+      <div class="col-xl-4">
+        <h4>Information</h4>{% autoescape off %}
+        {{ service.sidebar }}
+        {% endautoescape %}
+      </div>
     </div>
   </div>
 </section>

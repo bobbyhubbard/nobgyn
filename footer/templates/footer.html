@@ -1,7 +1,7 @@
 {% load static %}
 <footer class="container-xl my-4">
-  <div class="col px-2 logo-mobile">
-    <a href="https://northlandobgyn.com"><img src="{% static 'images/northland-obgyn-logo.svg' %}" width="225" alt="" loading="lazy"/></a>
+  <div class="col px-2 mobile">
+    <a href="https://northlandobgyn.com"><img src="{% static 'images/northland-obgyn-logo.svg' %}" width="200" alt="" loading="lazy"/></a>
   </div>
     <div class="row mx-3 px-5 py-2">
       <div class="col px-2">
@@ -11,7 +11,7 @@
           {% if location.isPrimary %}
           {% autoescape off %}
           <p>{{ location.appointment_text }}</p>
-          <p>{{ location.phone }}</p>
+          <p><a href="tel:{{ location.phone }}">{{ location.phone }}</a></p>
           {% endautoescape %}
           {% endif %}
         {% endfor %}

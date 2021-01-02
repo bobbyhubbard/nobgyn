@@ -17,77 +17,77 @@
   </div>
 </header>
 {% for location in locations %}
-<section class="container-xl">
-  <div class="row justify-content-md-center">
-    <div class="left_col">
-      {% autoescape off %}
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col">
-            <h1>{{location.name}}</h1>
-            <h5>{{location.parent_facility}}</h5>
+<section>
+  <div class="container-xl">
+    <div class="row justify-content-md-center">
+      <div class="col-sm-8">
+        {% autoescape off %}
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col">
+              <h1>{{location.name}}</h1>
+              <h5>{{location.parent_facility}}</h5>
+            </div>
           </div>
+          <div class="row">
+            <div class="col">
+              <picture class="img-responsive">
+                <source srcset="/{{ location.image_sml }}" media="(max-width: 500px)">
+                <source srcset="/{{ location.image }}">
+                <img src="/{{ location.image }}" alt="{{ location.slug }}" class="img-responsive" loading="lazy">
+              </picture>
+            </div>
         </div>
         <div class="row">
           <div class="col">
-            <picture class="img-responsive">
-              <source srcset="/{{ location.image_sml }}" media="(max-width: 500px)">
-              <source srcset="/{{ location.image }}">
-              <img src="/{{ location.image }}" alt="{{ location.slug }}" class="img-responsive" loading="lazy">
-            </picture>
+            <p>{{ location.desc }}</p>
           </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <p>{{ location.desc }}</p>
+        {% endautoescape %}
         </div>
-    </div>
-      {% endautoescape %}
       </div>
-    </div>
-    <div class="right_col">
-      <div class="container">
-        <div class="row title">
-          <div class="col">
-            <h4>Appointments</h4>
-            <div class="row">
-              <div class="col-1"><i class="fal fa-clock"></i></div>
-              <div class="col"><p>{{ location.appointment_text }}</p></div>
-            </div>
-            <div class="row">
-              <div class="col-1"><i class="fal fa-phone-alt"></i></div>
-              <div class="col"><p>{{ location.phone }}</p></div>
-            </div>
-          </div>
-        </div>
-        <div class="row pt-4">
-          <div class="col">
-            <iframe
-            width="471"
-            height="236"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhsOOBKF5HaptHgpR1tnmXoPF2CxhVLcg&q={{ location.address1 }} {{ location.address2 }} {{ location.city_state_zip }}" allowfullscreen>
-          </iframe>
-          <div class="row">
-            <div class="col-1"><i class="fal fa-map-marker-alt"></i></div>
+      <div class="col-sm-4">
+        <div class="container">
+          <div class="row title">
             <div class="col">
-            <p>{{ location.address1 }}<br/>
-              {{ location.address2 }}<br/>
-              {{ location.city_state_zip }}
-            </p>
+              <h4>Appointments</h4>
+              <div class="row">
+                <div class="col-1"><i class="fal fa-clock"></i></div>
+                <div class="col"><p>{{ location.appointment_text }}</p></div>
+              </div>
+              <div class="row">
+                <div class="col-1"><i class="fal fa-phone-alt"></i></div>
+                <div class="col"><p><a href="tel:{{ location.phone }}">{{ location.phone }}</a></p></div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-4">
+            <div class="col embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhsOOBKF5HaptHgpR1tnmXoPF2CxhVLcg&q={{ location.address1 }} {{ location.address2 }} {{ location.city_state_zip }}" allowfullscreen>
+                </iframe>
+            <div class="row">
+              <div class="col-1"><i class="fal fa-map-marker-alt"></i></div>
+              <div class="col">
+              <p>{{ location.address1 }}<br/>
+                {{ location.address2 }}<br/>
+                {{ location.city_state_zip }}
+              </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    {% if location.highlighted_content %}
+    <div class="row justify-content-md-center highlighted_content">
+        {% autoescape off %}
+        {{ location.highlighted_content}}
+        {% endautoescape %}
+    </div>
+    {% endif %}
   </div>
-  {% if location.highlighted_content %}
-  <div class="row justify-content-md-center highlighted_content">
-      {% autoescape off %}
-      {{ location.highlighted_content}}
-      {% endautoescape %}
-  </div>
-  {% endif %}
 </section>
 {% endfor %}
 {{ footerFragment }}

@@ -11,7 +11,7 @@
       <source srcset="{% static 'images/JPGs/services.jpg' %}">
       <img src="{% static 'images/JPGs/services.jpg' %}" alt="Services" class="img-responsive">
     </picture>
-    <div class="overlay_centered white"><h1>Services</h1></div>
+    <div class="overlay_centered white"><h1>Our Services</h1></div>
   </div>
 
   <div class="tagline container">
@@ -32,11 +32,11 @@
     </div>
   </div>
 </section>
-<section class="px-5 py-5">
+<section class="pl-2">
   <div class="container-lg">
     <div class="row">
       {% for service in services %}
-      <div class="col-5 service-item">
+      <div class="col-xl-5 service-item">
           <img src="/{{ service.icon }}" alt="{{ service.slug }}" class="service-icon" width="60">
           <div class="service-summary">
             <a href="{{ service.get_absolute_url }}"><h2>{{ service.name }}</h2></a>

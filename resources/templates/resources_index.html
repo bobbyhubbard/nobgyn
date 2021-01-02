@@ -19,14 +19,14 @@
       <div class="col"></div>
   </div>
 </header>
-<section class="px-5 py-5">
+<section class="pt-5">
   <div class="container-lg">
     <div class="row justify-content-md-center">
       {% for resource in resources %}
-      <div class="col-5 service-item">
+      <div class="col-md-5 col-sm-12 service-item">
         <div class="row">
-          <div class="col-2"><img src="/{{ resource.icon }}" alt="{{ resource.slug }}" class="resource-icon" width="60"></div>
-          <div class="col resource-summary">
+          <div class="col-3"><img src="/{{ resource.icon }}" alt="{{ resource.slug }}" class="resource-icon" width="60"></div>
+          <div class="col-9 resource-summary">
             {% if resource.external_link %}
               <h2><a target="{{resource.slug}}" href="{{ resource.external_link }}">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></h2>
             {% elif resource.form_content %}

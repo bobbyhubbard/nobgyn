@@ -110,6 +110,10 @@ i {
   display:block;
 }
 
+.navbar-brand img {
+  width: 250px;
+}
+
 .navbar-nav li {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 20px;
@@ -177,12 +181,16 @@ footer .branding a {
   text-decoration: underline;
 }
 
-.services .container {
+.services .container.text {
   text-align: center;
   max-width: 565px;
 }
 
 .services .container-xl {
+  text-align: center;
+}
+.services .restricted {
+  max-width: 350px;
   text-align: center;
 }
 
@@ -193,7 +201,7 @@ section .container, section .container-xl, .providers .g-bg h2 {
 
 .overlay_centered {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -235,7 +243,9 @@ section .container, section .container-xl, .providers .g-bg h2 {
   letter-spacing: 0em;
   color: #0D7359;
 }
-
+.home .providers .highlighted_link{
+  text-align: center;
+}
 .highlighted_link a {
   font-family: Alegreya Sans;
   font-size: 26px;
@@ -275,7 +285,7 @@ section .container, section .container-xl, .providers .g-bg h2 {
   font-size: 24px;
 }
 
-.doctors p.name {
+p.name {
   margin-bottom: 0;
   margin-top: 15px;
 }
@@ -305,22 +315,11 @@ header .overlay_centered span {
   opacity: 1;
 }
 
-.provider_detail section.container {
-  padding: 35px 0;
-  max-width: 1200px;
+.provider_detail section {
+  padding-top: 40px;
 }
 
-.left_col {
-  max-width: 60%;
-  padding-right: 50px;
-}
-
-.right_col {
-  max-width: 40%;
-  padding-left: 20px;
-}
-
-.provider_detail .left_col h2 {
+.provider_detail .col-sm-8 h2 {
   padding-top: 30px;
 }
 
@@ -334,13 +333,6 @@ header .overlay_centered span {
 
 .service-item {
   padding-bottom: 35px;
-  margin-left: 70px;
-}
-
-.service-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .service-item .service-summary {
@@ -351,24 +343,15 @@ header .overlay_centered span {
   padding: 35px 0;
 }
 
-.service_detail .left_col {
-  padding-right: 70px;
-  font-size: 22px;
-  line-height: 35px;
-  max-width: 70%;
-}
-
-.service_detail .right_col {
-  max-width: 25%;
-  font-size: 18px;
-  line-height: 31px;
-  max-width: 30%;
-}
-
 .service_detail .services {
-  padding-top: 3em!important;
+  padding-top: 25px;;
   font-size: 20px;
   line-height: 32px;
+}
+
+.service_detail .services_content ul {
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
 span.file_type {
@@ -385,10 +368,6 @@ span.file_type {
   margin-left: -1em;
   padding-top: 15px;
   color: #50D3B2;
-}
-
-.massage-therapy section.container {
-  max-width: 1200px !important;
 }
 .massage-therapy .benefits {
   border-radius: 12px;
@@ -423,29 +402,29 @@ span.file_type {
   color: #8D9694;
 }
 
-.massage-therapy .right_col .container {
+.massage-therapy .col-sm-5 .container {
   background: #FFFFFF;
   box-shadow: 0px 4px 32px rgba(2, 44, 33, 0.15);
   border-radius: 12px;
 }
-.massage-therapy .right_col .text-left {
+.massage-therapy .col-sm-5 .text-left {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   margin-left: 10px;
 }
-.massage-therapy .right_col .text-right {
+.massage-therapy .col-sm-5 .text-right {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-right: 10px;
 }
-.massage-therapy .right_col p {
+.massage-therapy .col-sm-5 p {
   margin-bottom: 0;
 }
-.massage-therapy .right_col .title, .massage-therapy .right_col .alt {
+.massage-therapy .col-sm-5 .title, .massage-therapy .col-sm-5 .alt {
   background: #F2F8F7;
   margin-bottom: 10px;
 }
-.locations-idx h1 {
+.locations-idx section h1 {
   text-align: left;
   padding: 0;
 }
@@ -478,11 +457,7 @@ span.file_type {
   line-height: 34px;
 }
 
-.forms_information section {
-  margin-top:15px;
-  margin-left: 365px;
-  margin-bottom: 50px;
-}
+
 .forms_information h2 {
   padding-top: 35px;
 }
@@ -514,6 +489,7 @@ span.file_type {
 }
 .faq_detail .input-field {
   padding-left: 5px;
+  margin-left: 5px;
   color: #50D3B2;
 }
 .faq_detail section ul {
@@ -522,13 +498,16 @@ span.file_type {
 #datepicker {
   cursor: pointer;
 }
+.mobile {
+  display: none;
+}
+.vids {
+  padding-top: 30px;
+}
 @media (min-width: 1200px) {
   .container-xl {
     max-width: 1440px !important;
   }
-}
-
-@media (min-width: 1200px) {
   .home .providers .col-lg-3 {
       -ms-flex: 0 0 20%;
       flex: 0 0 20%;
@@ -540,14 +519,87 @@ span.file_type {
       max-width: 30%;
   }
 }
-footer .logo-mobile {
-  display: none;
+@media (max-width: 1200px) {
+  header .img-responsive {
+    min-height: 176px;
+  }
+  .faq_detail header .img-responsive {
+    height: 250px;
+  }
+  .provider_detail header .img-responsive {
+    height: 215px;
+  }
+  body {
+
+    font-size: 18px;
+    line-height: 29px;
+    color: #022C21;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  h2 {
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 24px;
+   }
+   h4 {
+     font-size: 20px;
+     line-height: 25px;
+    }
+    .overlay_centered h1 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    header .overlay_centered span {
+      font-size: 16px;
+      line-height: 18px;
+    }
 }
 
 @media (max-width: 600px) {
-  .overlay_centered h1 {
-    font-size: 50px;
-    line-height: 50px;
+
+   .services .highlighted_link a {
+       font-size: 26px;
+       line-height: 29px;
+   }
+   .services .restricted {
+     max-width: none;
+   }
+   .services-idx .tagline {
+     font-size: 22px;
+    }
+    .services-idx .service-item {
+        padding-bottom: 15px;
+        margin-left: 0px;
+    }
+   .service_detail .services {
+     font-size: 18px;
+     line-height: 20px;
+   }
+  .home .providers .g-bg {
+     background: none;
+   }
+  .providers .g-bg .col-sm-8 {
+     margin: 0 40px 20px 40px;
+   }
+  .highlighted_link a {
+     font-size: 22px;
+     line-height: 24px;
+   }
+   section .container, section .container-xl, .providers .g-bg h2 {
+     margin-top: 25px;
+     margin-bottom: 25px;
+   }
+  .navbar-brand img {
+    width: 200px;
   }
   .doctors p.name a {
     font-size: 20px;
@@ -556,6 +608,7 @@ footer .logo-mobile {
     padding-right: 0!important;
     padding-left: 0;
   }
+
   footer .px-5, footer .pl-4 {
     padding-right: 0!important;
     padding-left: 0!important;
@@ -574,10 +627,31 @@ footer .logo-mobile {
   footer .branding img {
     display: none;
   }
-  footer .logo-mobile {
+  footer .mobile {
     padding-top: 35px;
+    padding-bottom: 0px;
     text-align: center;
+  }
+  .mobile {
+    padding-bottom: 20px;
     display: block;
   }
-
+  .desktop {
+    display: none;
+  }
+  .container-xl {
+    padding: 0 2px;
+  }
+  .locations-idx .highlighted_content {
+    background: #F2F8F7;
+    padding: 4px;
+    margin: 20px;
+    margin-bottom: 10px;
+  }
+  .locations-idx .highlighted_content h2 {
+    padding-bottom: 10px;
+  }
+  .service-item {
+    margin-left: 5px;
+  }
 }

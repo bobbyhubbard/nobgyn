@@ -17,22 +17,28 @@
     </div>
   </div>
 </header>
-<section class="container">
+<section>
+  <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col">
+    <div class="col-md-5 col-sm-12">
       <h2>Forms</h2>
       {% for form in forms %}
         <p><a href="{% firstof form.file form.link %}">{{form.name}}</a> {% if form.file_type %}<span class="file_type">({{form.file_type}})</span>{% endif %}</p>
       {% endfor %}
+    </div>
+    <div class="col-md-5 col-sm-12">
       <h2>Information</h2>
       {% for info in infos %}
         <p><a href="{% firstof info.file info.link %}">{{info.name}}</a> {% if info.file_type %}<span class="file_type">({{info.file_type}})</span>{% endif %}</p>
       {% endfor %}
+    </div>
+    <div class="col-md-5 col-sm-12">
       <h2>Frequently Asked Questions</h2>
       {% for faq in faqs %}
         <p><a href="{% firstof faq.file faq.link %}">{{faq.name}}</a> {% if faq.file_type %}<span class="file_type">({{faq.file_type}})</span>{% endif %}</p>
       {% endfor %}
     </div>
+  </div>
   </div>
 </section>
 {{ footerFragment }}
