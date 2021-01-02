@@ -31,11 +31,11 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.13.103', '3.22.239.246']
 
 # in-memory cache
 CACHES = {
-    'a': {
+    'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
     },
-    'default': {
+    'b': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
     }
 }
