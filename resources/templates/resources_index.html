@@ -37,13 +37,13 @@
             {% endif %}
             {% if resource.slug == 'forms_information' %}
                 {% for form in forms %}
-                <p><a href="{% firstof form.filePath form.link %}">{{form.name}}</a> {% if form.file_type %}<span class="file_type">({{form.file_type}})</span>{% endif %}</p>
+                <p><a href="{% if form.file %}/uploads/{% endif %}{% firstof form.file form.link %}">{{form.name}}</a> {% if form.file_type %}<span class="file_type">({{form.file_type}})</span>{% endif %}</p>
                 {% endfor %}
                 {% for info in infos %}
-                <p><a href="{% firstof info.filePath info.link %}">{{info.name}}</a> {% if info.file_type %}<span class="file_type">({{info.file_type}})</span>{% endif %}</p>
+                <p><a href="{% if info.file %}/uploads/{% endif %}{% firstof info.file info.link %}">{{info.name}}</a> {% if info.file_type %}<span class="file_type">({{info.file_type}})</span>{% endif %}</p>
                 {% endfor %}
                 {% for faq in faqs %}
-                <p><a href="{% firstof faq.filePath faq.link %}">{{faq.name}}</a> {% if faq.file_type %}<span class="file_type">({{faq.file_type}})</span>{% endif %}</p>
+                <p><a href="{% if faq.file %}/uploads/{% endif %}{% firstof faq.file faq.link %}">{{faq.name}}</a> {% if faq.file_type %}<span class="file_type">({{faq.file_type}})</span>{% endif %}</p>
                 {% endfor %}
 
             {% else %}

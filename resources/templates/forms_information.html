@@ -23,13 +23,13 @@
     <div class="col-md-5 col-sm-12">
       <h2>Forms</h2>
       {% for form in forms %}
-        <p><a href="{% firstof form.file form.link %}">{{form.name}}</a> {% if form.file_type %}<span class="file_type">({{form.file_type}})</span>{% endif %}</p>
+        <p><a href="{% if form.file %}/uploads/{% endif %}{% firstof form.file form.link %}">{{form.name}}</a> {% if form.file_type %}<span class="file_type">({{form.file_type}})</span>{% endif %}</p>
       {% endfor %}
     </div>
     <div class="col-md-5 col-sm-12">
       <h2>Information</h2>
       {% for info in infos %}
-        <p><a href="{% firstof info.file info.link %}">{{info.name}}</a> {% if info.file_type %}<span class="file_type">({{info.file_type}})</span>{% endif %}</p>
+        <p><a href="{% if info.file %}/uploads/{% endif %}{% firstof info.file info.link %}">{{info.name}}</a> {% if info.file_type %}<span class="file_type">({{info.file_type}})</span>{% endif %}</p>
       {% endfor %}
     </div>
     <div class="col-md-5 col-sm-12">

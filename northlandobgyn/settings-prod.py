@@ -43,13 +43,6 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
-        'TIMEOUT': 600,
-        'OPTIONS': {
-            'MAX_ENTRIES': 1000
-        }
-    },
-    'a': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
     }
 }
 
@@ -88,8 +81,8 @@ MIDDLEWARE = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware'
 ]
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
+#SECURE_CONTENT_TYPE_NOSNIFF = True
+##SECURE_BROWSER_XSS_FILTER = True
 #SECURE_REFERRER_POLICY = True
 #SECURE_SSL_REDIRECT = True
 

@@ -21,18 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-def get_env_value(env_variable):
-    try:
-        return os.environ[env_variable]
-    except KeyError:
-        error_msg = 'Set the {} environment variable'.format(var_name)
-        raise ImproperlyConfigured(error_msg)
-
-
-SECRET_KEY = get_env_value('DJANGO_PROD')
+SECRET_KEY = '%2t!z5vw11(t@fxbln&zvmfvv*pptk*p2mv5^*va&%k9n&we8g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # 172.26.13.103
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.10.111',
@@ -40,15 +32,11 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.10.111',
 
 # in-memory cache
 CACHES = {
-    'default': {
+    'a': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
-        'TIMEOUT': 600,
-        'OPTIONS': {
-            'MAX_ENTRIES': 1000
-        }
     },
-    'a': {
+    'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
     }
 }
@@ -88,8 +76,8 @@ MIDDLEWARE = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware'
 ]
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
+#SECURE_CONTENT_TYPE_NOSNIFF = True
+#SECURE_BROWSER_XSS_FILTER = True
 #SECURE_REFERRER_POLICY = True
 #SECURE_SSL_REDIRECT = True
 
