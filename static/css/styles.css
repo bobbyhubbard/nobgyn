@@ -126,6 +126,10 @@ i {
   padding-right: 20px;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: #0D7359;
+}
+
 #navbarSupportedContent {
   padding-right: 3em;
 }

@@ -1,0 +1,459 @@
+id,slug,view_order,question,answer,special,old_path,faq_type
+1,how_far_along_am_i,1,I think I am pregnant. How far along am I?,"<p>We date pregnancies from the first day of the previous menstrual cycle. Actual conception usually occurs around two weeks after that day. Sometimes, it is difficult to remember the last menstrual period, or the last period may have been atypical which calls into question the true gestational age. We do ultrasounds to confirm dates whenever there is any question.</p>","<h3>Estimate* Your Due Date</h3>
+<p>Select the date of your last menstrual period:</p>
+<div class=""inputContainer"">
+   <i class=""far fa-calendar icon""></i>
+   <input id=""datepicker"" class=""input-field"" type=""text"">
+</div>
+<p>Your approximate due date is:<p>
+<h2 id=""duedate"">MM/DD/YYYY</h2>
+<p><small>* Your due date is calculated by determining the first day of your last menstrual period. Substract 3 months from that date. Then add 7 days plus 1 year.</small></p>
+<script defer>
+function cal_gen_date2 (dt_datetime) {
+	return (
+		(dt_datetime.getMonth() < 9 ? '0' : '') + (dt_datetime.getMonth() + 1) + ""/""
+		+ (dt_datetime.getDate() < 10 ? '0' : '') + dt_datetime.getDate() + ""/""
+		+ dt_datetime.getFullYear()
+	);
+}
+  $( function() {
+    $( ""#datepicker"" ).datepicker({ 
+        minDate: ""-10M"" , 
+        maxDate: ""+0D"",
+        dateFormat: ""D M dd yy"",
+        onSelect: function(){
+           var orig_mo = $( ""#datepicker"" ).datepicker(""getDate"")
+           orig_mo.setMonth(orig_mo.getMonth() - 3);
+           orig_mo.setDate(orig_mo.getDate() + 7);
+           orig_mo.setFullYear(orig_mo.getFullYear() + 1);
+           $(""#duedate"").html(cal_gen_date2(orig_mo));
+        }
+     });
+  } );
+  </script>",ob_q1,1
+2,i_am_pregnant_what_should_i_do,2,I just found out I am pregnant. What should I do?,"<p>First of all, congratulations! We are excited for this miraculous event and look forward to sharing this exciting time with you. You need to call for a new OB appointment. We recommend the first OB appointment occurs within the first 12 weeks of pregnancy. Of course, we recommend you discontinue smoking and drinking any type of alcohol. You should take a prenatal vitamin with adequate folic acid. Most commercial prenatal vitamins contain a full milligram. This folic acid is most important in the first month of pregnancy.</p>
+<p>The first OB appointment will be the most involved. During this visit, a complete history and physical exam will be done. A pap smear will be done if you are not current. Appropriate blood tests will be done, and you will be oriented to the office if you are unfamiliar with our facility and staff.</p>",,ob_q2,1
+3,expect_from_office_visit_during_pregnancy,3,What should I expect from my office visits during my pregnancy?,"<p>The first visit is the most involved because of the time spent gathering your complete history, conducting the physical exam  and completing the necessary blood work. Subsequent visits will occur monthly until you are 32 weeks; from 32 weeks to 36 weeks, they will occur every 2 weeks. After 36 weeks, your visits will be weekly until delivery. Additional visits during the pregnancy may include: </p>
+<ul> 
+  <li>12 weeks: first time to hear heartbeat.</li>
+  <li>16 weeks: triple screen test containing Maternal serum Alpha Fetoprotein (MS-AFP), Estriol, HCG. <a href=""/faqs/what_is_the_afp_test"">More on AFP</a>. </li> 
+  <li>18-20 weeks: ultrasound. </li> 
+  <li>24-28 weeks: glucose test, and Rhogam given to RH- patients. </li> 
+  <li>36 weeks: screening for GBS (Group B streptococcus). </li> 
+</ul>",,ob_q3,1
+4,what_is_the_afp_test,4,"What is the AFP test, and should I get it done?","<p>The AFP test or Maternal Serum Alpha Fetoprotein test is a blood test of  three determinants. It also contains estriol and human chorionic gonadotropin. The purpose of this test is to determine the risk of the current pregnancy being affected by certain chromosomal problems such as Down's syndrome or variants of spina bifida. Most of the counseling regarding this test is focused on Down's syndrome because it is the most common of the few problems detectable with this test. </p>
+  <p>Down's syndrome is a condition known to most people. It represents a group of problems which occur when there is an extra 21st chromosome. Down's syndrome patients have characteristic body changes such as short stature and mongoloid features. All are affected by variable levels of mental retardation. The risk of having a baby with Down's syndrome increases with maternal age. The risk at age 20 is 1/1,667; age 25 is 1/1,250; age 30 is 1/952; age 35 is 1/385; age 40 is 1/106 and age 45 is 1/30. </p>
+  <p>The AFP, or triple screen test, is a screening test and is not diagnostic. It will not tell you if your baby has Down's syndrome or any other problem. The test will indicate whether you should be offered further testing. The formula used to derive the risk approximates the risk of a 35-year old. Thus, a 35 year old patient is screen positive  by virtue of age alone and will be offered further testing. Patients considered  high risk because of age or a positive triple screen test, will be offered  counseling with a perinatologist, ultrasound, and amniocentesis. Amniocentesis is the gold standard for diagnosis.<br>
+      <br>
+    The AFP or triple screen test is optional. If you do not desire any further prenatal diagnostic information, don't get the test. If you want all the prenatal diagnostic information you can get so that you may prepare yourself for a potential special needs child or would consider termination, then get the test.</p>",,ob_q4,1
+29,pill_that_lets_you_have_only_four_cycles_per_year,5,I've heard about taking a pill that lets you have only four cycles per year. Is that safe?,"<p>Yes, it is quite safe. Doctors have been prescribing the pill in this fashion for many years. Just recently, Barr pharmaceuticals packaged a pill called Seasonale to take advantage of this. This formulation uses the same drugs and doses we have been prescribing for decades. The same effect may be achieved with any combined contraceptive ring, patch or pill by taking the 21 hormonally active pills or 3 patches and then skipping the 7 placebo pills at the end of the pack and initiating the next pack. The packaging of the pill to provide a monthly cycle was done because marketing experts thought women would feel safer with a familiar pattern to their bleeding. There is no health benefit to this monthly withdrawal bleeding, and for some there may be significant health benefits to the extended dosing regimen. The physician may consider any patient who has symptomatic menstrual cycles a good candidate. Patients with heavy bleeding, cramping and pain should consider this after other causes have been ruled out. Patients with endometriosis, PMS, menstrual migraines and epilepsy should consider this. Ultimately, this represents another opportunity for the modern woman to stay in control. There are some side effects to adopting this regimen. The most significant side effect is breakthrough bleeding. This is also the most frequent reason given for discontinuing. With the extended regimen, greater than 25 percent will have unscheduled bleeding in the first 3-month cycle. By year's end, 80 percent have excellent cycle control, and that number continues to rise with use.</p>",,gyn_q5,1
+5,positive_afp_triple_screen,5,I have a positive AFP or triple screen test for Down's Syndrome. What does that mean?,"<p>This means that the blood test has determined that your pregnancy has the same risk or higher as that of a 35-year old of being affected by Down's Syndrome.  It is not diagnostic.  This test is a screening test and is intended to delineate which patients should be offered further testing. </p>
+<p>The most common reason for a positive result is the dates of the pregnancy are inaccurate.  In this case, ultrasound-directed correction of the dates will typically yield a correct negative result.  In the case where the dates are correct, you will be offered counseling and an explanation of the result with a perinatologist.  You will be offered a level two ultrasound looking for features seen in Down's syndrome.  These are by no means diagnostic.  Amniocentesis is the gold standard for diagnosis.  This involves placing a needle into the uterus under ultrasound guidance and withdrawing amniotic fluid which can then be tested.</p>",,ob_q5,1
+6,group_b_streptococcus_what_does_this_mean,6,I have been told I carry Group B streptococcus (GBS). What does that mean?,"<p>It is now standard obstetric practice to screen all pregnant patients at or around 36 weeks gestation for GBS. GBS is bacteria carried in the bowel of 10-30 percent of all women.  It is not pathologic to the carrier although it can be harmful to a baby.  GBS can cause a sepsis syndrome that can be life-threatening to a newborn. Thus, all carriers are treated with IV antibiotic while in labor.  There is no use in treating at any other time.  Of note, neonates affected by GBS sepsis are infrequent; therefore, if no test results are available, it is acceptable to treat patients based on risk factors. These risk factors include: preterm, prolonged rupture of membranes, maternal fever, history of previous GBS affected baby and GBS UTI during pregnancy.</p>",,ob_q6,1
+7,labor_and_delivery_process,7,I need to go to labor and delivery. What is the process?,"<div class=""alert alert-warning"" role=""alert"">
+For emergent problems (anything for which you cannot wait such as bleeding or decreased fetal movement), <strong>forgo admitting and go straight to labor and delivery on the seventh floor.</strong>
+</div>
+<p>If you need to go to labor and delivery for labor or any other pregnancy related problem (after 20 weeks) follow these guidelines.</p>
+<p>Liberty Hospital: From 11 p.m. to 6 a.m., first report to the emergency room. From 6 a.m. to 11 p.m., report directly to labor and delivery on the third floor of the Medical Plaza East Building.</p>",,ob_q7,1
+8,pregnant_and_bleeding,8,What if I am pregnant and have bleeding?,"<div class=""alert alert-warning"" role=""alert"">
+For any profuse vaginal bleeding, medical attention should be sought immediately.
+</div>
+<p><strong>In the first trimester (before 12 weeks):</strong> This is very common. It occurs in more than 30 percent of pregnancies. Our greatest concern is that this would be a sign of a tubal pregnancy which can be a medical emergency. Fortunately, tubal pregnancies are uncommon (less than 2 percent). </p>
+<p>The next and more common concern is: does this mean the pregnancy is not viable? Is it the sign of an impending miscarriage? Around 50 percent of the time, this is the case. Nonviable pregnancies may be diagnosed via ultrasound. If the pregnancy is too early for ultrasound, serial blood determinations of the HCG level may be done over several days. During office hours, we  typically perform an exam and ultrasound and obtain blood samples. </p>
+<p>If  bleeding occurs after hours and you are concerned about the volume bleeding or the possibility of tubal pregnancy, we will direct you to the emergency room. If bleeding volume is light, the patient is encouraged to follow-up during office hours where an evaluation can be done. It is important to note that in the case where bleeding is seen, there is no intervention that can change a nonviable pregnancy to a viable one.</p>
+  <p><strong>Bleeding in the second and third trimester (after 12 weeks): </strong>A small amount of bleeding and spotting is normally seen at term after cervical exams and as the cervix thins. Commonly, it represents trauma or irritation of the vascular cervix especially if it occurs after intercourse. However, bleeding can be a sign of preterm labor especially if accompanied by regular uterine contractions or menstrual-type cramping. </p>
+<p>Bleeding can also be the sign of placenta previa. This means the placenta is blocking the cervix. This is evaluated and ruled-out during the ultrasound around 20 weeks. </p>
+<p> Lastly, bleeding could represent abruption of the placenta. This means the placenta separates from the wall of the uterus. This occurs most commonly in women with high blood pressure. It can also be the result of trauma to the abdomen.</p>",,ob_q8,1
+9,having_a_miscarriage_what_should_i_expect,9,I am having a miscarriage. What are my options? What should I expect?,"<p>If you have been diagnosed with a nonviable pregnancy or impending miscarriage in the first trimester (less than 12 weeks), you have our heartfelt condolecences.  This is never an easy thing to get through, and we know that substantial mourning is normal.  If diagnosed, you will be given the option of passing the pregnancy naturally or undergoing a procedure called a suction dilation and curettage.  If you opt to pass the pregnancy naturally, this can take a variable amount of time, even weeks.  If bleeding and cramping has already started, then the end is likely in sight. You will experience a crescendo of cramping and bleeding followed by the passage of tissue and cessation of cramping and a significant decrease in the bleeding.  This can be an unnerving process and many patients end up in the emergency room.  The cramping is synonymous with labor pains.  The cramps open the cervix so the pregnancy can be passed.  Occasionally, only part of the pregnancy will be passed and the bleeding and cramping will continue.  In these cases, a dilation and curettage will need to be done. </p>
+<p>Dilation and curettage is a safe procedure, although no procedure is completely free of potential complication.  Of course, medical attention should always be sought for profound bleeding and pain.  Also, expectant management (passing tissue naturally) should not occur when a tubal pregnancy (no pregnancy seen in the uterus on ultrasound) is considered a possibility.</p>",,ob_q9,1
+10,no_fetal_movement,10,Is it normal to feel no fetal movement?,"<p>Fetal movement is usually noticed by 20 weeks. By 24-28 weeks, fetal movement should be noted almost hourly. At this point, it is abnormal to feel no movement. If no movement is noted, the most likely scenario is that you have not been paying close attention.  If you are concerned, eat something or drink something sweet and lie on your left side and count movements.  Any movement is reassuring. Four to five discrete movements in an hour is normal.  </p>
+<p>Remember, babies sleep 20 to 40 minutes per hour and there may be certain times of the day where they seem more or less active and there is really no such thing as a baby that moves too much. In the event that this observation has not satisfied you that your baby is doing well and you are 28 weeks or more, you are directed to labor and delivery for evaluation. If you are less than 28 weeks, we are hesitant to recommend coming to the hospital for evaluation especially in the absence of other extenuating circumstances because obstetric intervention for fetal indications before 28 weeks is quite rare. However, if there is any question, the heart tones can be checked either in the office or on labor and delivery.</p>",,ob_q10,1
+11,did_i_repture_my_membranes,11,Did I rupture my membranes?,"<p>Rupture of the membranes causes a significant gush of clear fluid commonly. It can also be seen when the patient has persistent wetness. Frequently, ongoing uterine contractions will occur. In certain scenarios, patients mistakenly think they have ruptured because of small episodic leakages, which is often urinary incontinence. Remember the uterus is sitting right on top of the bladder. Also, vaginal discharge can be profound at term. This problem is evaluated typically in the clinic or labor and delivery after hours.</p>",,ob_q11,1
+12,when_should_i_go_to_labor_and_delivery,12,Am I in labor? When should I go to labor and delivery?,"<p>If you are greater than 36 weeks, you may experience contractions repeatedly. Most often, you will be instructed to go to labor and delivery if the contractions are profound (having trouble walking and talking during the contractions and occurrence is every 5 minutes). Labor does not typically diminish when you rest. There are exceptions to this guideline: the patient with a history of rapid labors or the patient who lives a long distance from the hospital. If you suspect that the membranes have ruptured, come directly to the hospital.</p>",,ob_q12,1
+13,less_than_36_weeks_regular_contractions,13,I am less than 36 weeks and am having regular contractions. What should I do?,"<p>Preterm labor is a profound problem in obstetrics, affecting 7-10 percent of pregnant women. The causes are multifactorial and the presentation varied. In general, we are much more tolerant of contractions after 34 weeks. Before 34 weeks, we are much less tolerant of contractions that occur more than 6 per hour. If you are having contractions and think they could be labor contractions, you will be instructed to rest on your side, drink 32-64 oz. of water and observe the contractions. If contractions continue at more than 6 per hour or worsen, then this is more concerning for the possibility of preterm labor, and you will be asked to come into labor and delivery. There are some signs which make the possibility of preterm labor higher. Those include foul smelling or blood tinged discharge or suspected rupture of membranes.</p>",,ob_q13,1
+14,pregnant_and_have_a_headache,14,What if I am pregnant and have a headache?,"<div class=""alert alert-warning"" role=""alert"">Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
+<p>Headache is a very common complaint, and a very difficult problem to deal with via the internet, or any ""call-in"" type scenario. The vast majority of headaches in reproductive aged women are going to be benign and self-limited. First, one must clarify what type of headache you have. In clarifying the type of headache, we must be mindful of danger signs that mandate presentation to an emergency room. Some of these might be:</p>
+<ol>
+  <li>First time headache.  The patient has never had headaches before.    </li>
+  <li>High intensity headache.  Described as the worst headache of a person's life.    </li>
+  <li> Severe persistent headache which reaches maximal intensity within a few seconds.    </li>
+  <li> Altered mental status or seizure accompanying the headache.    </li>
+  <li> Concomitant infection ie sinus infection, fever.</li>
+  <li>Visual changes.</li>
+  <li>Headache with exertion.    </li>
+  <li>Patients being followed for high blood pressure especially in the third trimester.  May have swelling, visual changes and even abdominal pain.    </li>
+</ol>
+<p>If the patient has a history of migraines and the headache is typical, then we usually conclude that this is a migraine though many patients will notice an improvement in migraines during pregnancy.  Tension headaches are very common during pregnancy.  Typically, we recommend Tylenol 1000mg and before 32 weeks gestation, ibuprofen (ie advil,motrin) 800mg.  We also recommend drinking a caffeinated beverage such as 12 oz. soda.  Though we don't advocate regular caffeine consumption, episodic use is not contraindicated in this situation.  We do not recommend using your midrin, or imitrex. If you call the on-call physician, you will likely be told to go to the emergency room for evaluation and pain medications.</p>","<div class=""alert alert-warning"" role=""alert"">Nsaids such as motrin, ibuprofen, advil, naprosyn, and aspirin to name a few have generally been considered safe when taken during pregnancy before 32 weeks gestational age.  We encourage caution in the use of nsaids especially during the first trimester.  There may be a small association with the use of these agents and the formation of cardiac septal defects and orofacial cleft defects in the newborn.</div>",ob_q14,1
+15,pregnant_and_upper_respiatory_tract_infection,15,What if I have an upper respiratory tract infection?,"<div class=""alert alert-warning"" role=""alert""> Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
+<p> The URI or upper respiratory tract infection is a catch-all term used to describe the common signs and symptoms of the ""common cold"".  Most of these infections are viral in nature and they resolve spontaneously.  Occasionally, a patient will have a bacterial infection involving the sinuses or the throat, such as strep throat, or even pneumonia.  These patients require antibiotic therapy.  It can be difficult to differentiate the common viral infection from the more serious bacterial URI or pneumonia.  If the symptoms are of new onset (&lt;1-2 weeks) and not accompanied by fever, productive sputum, or chest pain and shortness of breath.  Supportive care is likely indicated and the patient may try one of the approved over the counter preparations to relieve her symptoms.  There are a variety of over the counter medications available.  Anti-histamines are utilized extensively.  See the list below and match the medications to the appropriate symptoms.  Importantly, these medications do not ""cure"" the infections.  They are intended to only relieve the symptoms caused by the infections.</p>
+<ul>
+  <li>Vaporizer at bedside</li>
+  <li>Vicks VapoRub</li>
+  <li>Nasal irrigation: ½ tsp. salt, ½ tsp. baking soda in 8 oz. warm water. Irrigate nasal passages 3-4 times daily</li>
+  <li>Cepastat lozenges or throat sprays</li>
+  <li>Afrin (oxymetazoline)—theoretic precautions in IUGR cases</li>
+  <li>Antihistamines:
+    <ul>
+      <li> Chlor-trimetron (chlorpheniramine)—after 12 weeks pregnant</li>
+      <li>Sudafed (pseudoephedrine)—after 12 weeks pregnant</li>
+      <li>Novahistine—after 12 weeks pregnant</li>
+      <li>Tylenol cold and sinus—after 12 weeks pregnant</li>
+      <li>Advil cold and sinus—after 12 weeks and before 32 weeks pregnant</li>
+      <li>Claritin (loratadine)—after 12 week</li>
+    </ul>
+  </li>
+</ul>",,ob_q15,1
+16,heartburn_or_gerd_during_pregnancy,16,What If I have heartburn or GERD during pregnancy?,"<div class=""alert alert-warning"" role=""alert"">Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
+<p>Heartburn is very common during pregnancy for a couple of reasons.  The hormones of pregnancy slow the transit of stomach contents, the hormones also relax the muscles and render the ""sphincter"" at the top of the stomach less functional.  Also, the enlarging uterus displaces the stomach upward further interfering with the normal function of this ""esophageal sphincter"".  There are a number of strategies that are useful:</p>
+<ul>
+  <li>Elevate the head of the bed 6-8 inches</li>
+  <li>Avoid foods that trigger the problem ie fatty foods, chocolate, and peppermint.  Also avoid foods that specifically irritate such as acidic drinks and spicy food.</li>
+  <li>Don't smoke</li>
+  <li>Don't lie down after eating</li>
+  <li>Chew gum, to promote salivation</li>
+</ul>
+<p>Some useful medications:</p>
+<ul>
+  <li>Tums</li>
+  <li>Maalox</li>
+  <li>OTC acid blockers such as pepcid(famotidine), and zantac(ranitidine)</li>
+  <li>Prescription: nexium(esmaprazole), protonix(pantoprazole)</li>
+  <li>Do not use Pepto Bismol during pregnancy</li>
+</ul>",,ob_q16,1
+17,diarrhea_while_i_am_pregnant,17,What if I have diarrhea while I am pregnant?,"<div class=""alert alert-warning"" role=""alert"">Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
+<p>Patients who are pregnant can acquire a gastroenteritis just as a non-pregnant woman can.  It may be related to ""food poisoning"" or other source.  The treatment is the same whether you are pregnant or not.<br>
+Consider the following if the symptoms are new onset and not associated with alert signs such as fever, bloody diarrhea, and weight loss:</p>
+<ul>
+  <li>Clear liquids, bland diet until symptoms resolve</li>
+  <li>Imodium AD</li>
+</ul>",,ob_q17,1
+18,constipation_during_pregnancy,18,What if I have constipation during pregnancy?,"<div class=""alert alert-warning"" role=""alert"">Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
+<p>Constipation is a common complaint during pregnancy.  The high progesterone levels encountered cause a slow down in the transport of material through the digestive tract.  This leads to problems ranging from heartburn to hemorrhoids.  Constipation can be further exacerbated by vitamins and iron.</p>
+<ul>
+  <li>Water consumption should be at least 8-10 glasses of water per day </li>
+  <li>High fiber diet </li>
+  <li>Fiber laxatives such as Metamucil, Citrucel, Fibercon</li>
+  <li>Milk of magnesia </li>
+  <li>Magnesium Citrate—120 to 240 mL orally </li>
+  <li>Mineral oil—may decrease absorption of fat soluble vitamins </li>
+  <li>Glycerine suppositories</li>
+</ul>",,ob_q18,1
+19,hemorrhoids_during_pregnancy,19,What if I have hemorrhoids during pregnancy?,"<div class=""alert alert-warning"" role=""alert"">Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
+<ul>
+  <li>Increase fluids </li>
+  <li>Increase fiber through diet or supplementation as above for constipation </li>
+  <li>Avoid straining with defecation and avoid prolonged times on the toilet </li>
+  <li>Use sitz baths to soothe </li>
+  <li>Try topical therapies—will not cure, but may decrease symptoms, for example, Tucks, Preparation H, Hydrocortisone and epi-foam</li>
+  <li>There are some prescription medicines which can provide relief and can be obtained with an asap clinic appointment. Surgical evaluation is rarely required but should be considered for thrombosed or refractory/ disabling hemorrhoids.</li>
+</ul>",,ob_q19,1
+20,first_trimester_nausea,20,I am in the first trimester and have nausea. What can I do and when should I be worried?,"<style type=""text/css"">
+<!--
+.style1 {font-size: smaller}
+-->
+</style>
+<div class=""alert alert-warning"" role=""alert"">Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
+<p>Fifty to ninety percent  of pregnant patients experience nausea and vomiting.   A list of  home and over-the-counter remedies is available in the section on medications in pregnancy.  We certainly advocate the use of electrolyte containing fluids if vomiting is persistent.  </p>
+<p>Less than 1 percent of patients develop a severe variant called hyperemesis gravidarum.   These patients have intractable nausea and vomiting and experience weight loss, dehydration and electrolyte abnormalities.  <em>Go to the emergency room if you are unable to keep any fluid down and have signs of dehydration such as dry mouth, low or concentrated urine output and the conservative interventions have not helped</em>. <em>There you may  be hydrated and evaluated for hyperemesis gravidarum. </em><br>
+  <br>
+  There are some important things to remember about pregnancy-associated nausea and vomiting.  These symptoms should not start after the first trimester.  If they do, other potential causes should be explored.  Also, pregnancy should not be accompanied by fever, burning with urination, headache and abdominal pain beyond what can be explained by sore abdominal muscles.</p>
+<p><strong><em>Nausea and vomiting*: </em></strong></p>
+<ul>
+  <li><em>Strategies </em>
+      <ul>
+        <li>Avoid odors and triggers </li>
+        <li>Avoid spicy and fatty foods </li>
+        <li>Omit iron supplement </li>
+        <li>Eat bland, dry high protein foods </li>
+        <li>Eat small frequent meals with fluids between </li>
+        <li>Avoid an empty stomach </li>
+        <li>Keep crackers at bedside; eat before rising</li>
+      </ul>
+  </li>
+</ul>
+<ul>
+  <li><em>Alternative therapies</em>
+      <ul>
+        <li>Ginger: ginger ale or capsules (250mg 4 times per day taken orally) </li>
+        <li>Vitamin B6 </li>
+        <li>P6 elastic wristband (acupuncture point)</li>
+      </ul>
+  </li>
+  <li><em>Antihistamines available without a script</em>
+      <ul>
+        <li>Dramamine (dimenhydrinate) 50mg 4 times per day </li>
+        <li>Antivert (meclizine) 25mg 3 times per day </li>
+        <li>Vistaril (hydroxyzine) 25-50mg 4 times per day </li>
+        <li>Benadryl (diphenhydramine) 25mg 3 times per day</li>
+      </ul>
+  </li>
+  <li><em>Prescription medicines available if indicated</em></li>
+</ul>
+<span class=""style1"">* adapted from Niebyl. ""Management of Nausea and Vomiting in Pregnancy: A Clinical Perspective"". <em>Academy for Healthcare Education</em>. Nov. 2002 pp.6-9.</span>",,ob_q20,1
+21,swelling_normal_in_pregnant,21,I am having swelling. Is that normal?,"<p>Seventy-five percent of pregnant patients experience swelling or edema. It is usually worse in the lower extremities, and tends to be worse at the end of the day or after prolonged standing. Generalized swelling can be noticed: rings do not seem to fit or your face may seem puffy. We recommend drinking adequate water. We do not recommend salt restriction. For lower extremity swelling, elevation is effective. Support hose can be obtained based on your prepregnancy weight. There is still the challenge of putting on hose while pregnant.</p>
+<p>Sometimes swelling is considered abnormal. Unilateral, or one-sided swelling, especially of the lower extremity is a possible sign of deep venous thrombosis. This will usually be associated with calf discomfort. Swelling is also seen in preeclampsia. This is a high blood pressure problem seen most frequently in the third trimester. You are evaluated for this each appointment. Your blood pressure is evaluated and your urine checked for protein. If you are concerned about the possibility of preeclampsia, you should have your blood pressure checked.</p>",,ob_q21,1
+22,instructions_regarding_glucose_test,22,What are the instructions regarding the glucose test (glucola)?,"<ol>
+<li>Avoid eating concentrated sweets the day before and the day of your glucola (i.e. candy, donuts, anything by Hostess)</li>
+<li>Drink 1 bottle of glucola 1 hour before your appointment time and drink the entire amount within 5 minutes.  Note the exact time you start the drink.</li>
+<li>DO NOT EAT, DRINK or SMOKE after you drink the glucola. (No mints, No chewing gum)</li>
+<li>Arrive at the office 45 minutes after you drink the glucola and notify the receptionist of the exact time you began drinking the glucola. Your blood will be drawn at the one hour mark.</li>
+</ol>",,ob_q22,1
+23,safe_medications_during_pregnancy,23,What medications are acceptable during pregnancy?,"<p>The universal disclaimer on medications during pregnancy is no medication has been studied completely. No study could take into account all the variables of human development that pertain to the specific medication. That being said, avoid taking unnecessary medications. This is most important during the first eight weeks of the pregnancy. Certainly, there are chronic prescribed medications such as anti-depressants, anti-hypertensives and thyroid medication, to name a few, which can be very important to the mother's well-being during pregnancy and will be continued. Sometimes, a medication will be changed to a safer alternative. Specific questions regarding medications can be handled at clinic appointments.</p>
+      <p>What about self-medication or OTCs for acute conditions?</p>
+      <p><strong>The following are generally acceptable during pregnancy (select to read more):</strong></p>
+      <div id=""accordion"">
+        <h4>Pain or headache</h4>
+        <div>
+          <p>Tylenol (acetaminophen); Ibuprofen (Advil, motrin) up to 32 weeks pregnant. Tylenol and motrin may be used together. To alleviate a migraine headache, drink a caffeinated beverage with Tylenol and motrin, though we don't advocate the regular consumption of caffeine.</p>
+        </div>
+        <h4>Cold, runny nose</h4>
+        <div>
+          <ul>
+            <li>Vaporizer at bedside</li>
+            <li>Vicks VapoRub</li>
+            <li>Nasal irrigation: 1/2 tsp. salt, 1/2 tsp. baking soda in 8 oz. warm water. Irrigate nasal
+               passages 3-4 times daily</li>
+            <li>Cepastat lozenges or throat sprays</li>
+            <li>Afrin (oxymetazoline)—theoretic precautions in IUGR cases</li>
+            <li><em>Antihistamines
+              </em>
+              <ul>
+                <li>Chlor-trimetron (chlorpheniramine)—after 12 weeks pregnant</li>
+                <li>Sudafed (pseudoephedrine)—after 12 weeks pregnant</li>
+                <li>Novahistine—after 12 weeks pregnant</li>
+                <li>Tylenol cold and sinus—after 12 weeks pregnant</li>
+                <li>Advil cold and sinus—after 12 weeks and before 32 weeks pregnant</li>
+                <li>Claritin (loratadine)—after 12 weeks</li>
+                <li>Zyrtec—after 12 weeks</li>
+                <li>Mucinex D—after 12 weeks</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <h4>Cough</h4>
+        <div>
+          <ul>
+            <li>Robitussin (guaifenesin)—after 12 weeks pregnant </li>
+            <li>Delsym (dextromethorphan) </li>
+            <li>Any over the counter cough/throat lozenge </li>
+          </ul>
+        </div>
+        <h4>Sinus tenderness</h4>
+        <div>
+          <ul>
+            <li>Vaporizer/Vicks VapoRub </li>
+            <li>Antihistamines as above </li>
+            <li>Saline nasal spray/irrigation </li>
+            <li>Afrin (oxymetazoline) </li>
+            <li>Warm packs to eyes and sinuses </li>
+          </ul>
+        </div>
+        <h4>Heartburn/Gastroesophageal Reflux Disease (GERD)</h4>
+        <div>
+          <ul>
+            <li>Tums </li>
+            <li>Maalox </li>
+            <li>Pepcid (famotidine) </li>
+            <li>Zantac (ranitidine) </li>
+            <li>Prescription: <em>nexium</em> (esomeprazole), <em>protonix</em> (pantoprazole), available in some cases and considered safe during pregnancy </li>
+            <li>Pepto Bismol: <strong>do not use during pregnancy</strong> </li>
+          	<li>Prilosec</li>
+          </ul>
+        </div>
+        <h4>Nausea and vomiting*</h4>
+        <div>
+          <ul>
+            <li><em>Strategies
+              </em>
+              <ul>
+                <li>Avoid odors and triggers </li>
+                <li>Avoid spicy and fatty foods </li>
+                <li>Omit iron supplement </li>
+                <li>Eat bland, dry high protein foods </li>
+                <li>Eat small frequent meals with fluids between </li>
+                <li>Avoid an empty stomach </li>
+                <li>Keep crackers at bedside; eat before rising </li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li><em>Alternative therapies</em>
+              <ul>
+                <li>Ginger: ginger ale or capsules (250mg 4 times per day taken orally) </li>
+                <li>Vitamin B6 </li>
+                <li>P6 elastic wristband (acupuncture point)</li>
+                </ul>
+            </li>
+            <li><em>Antihistamines available without a script</em>    <ul>
+                <li>Dramamine (dimenhydrinate) 50mg 4 times per day </li>
+                <li>Antivert (meclizine) 25mg 3 times per day </li>
+                <li>Vistaril (hydroxyzine) 25-50mg 4 times per day </li>
+                <li>Benadryl (diphenhydramine) 25mg 3 times per day </li>
+              </ul>
+            </li>
+            <li><em>Prescription medicines available if indicated</em></li>
+          </ul>
+          <p>* adapted from Niebyl. ""Management of Nausea and Vomiting in Pregnancy: A Clinical Perspective"". Academy for Healthcare Education. Nov. 2002 pp.6-9.</p>
+        </div>
+        <h4>Diarrhea</h4>
+        <div>
+          <p>(You may follow these instructions if symptoms are acute and no alert signs such as fever, bloody diarrhea or weight loss have occurred.)</p>
+          <ul>
+            <li>Clear liquids/bland diet until symptoms resolve </li>
+            <li>Imodium AD </li>
+          </ul>
+        </div>
+        <h4>Constipation</h4>
+        <div>
+          <ul>
+            <li>Water consumption should be at least 8-10 glasses of water per day </li>
+            <li>High fiber diet </li>
+            <li>Fiber laxatives such as Metamucil, Citrucel, Fibercon </li>
+            <li>Milk of magnesia </li>
+            <li>Magnesium Citrate—120 to 240 mL orally </li>
+            <li>Mineral oil—may decrease absorption of fat soluble vitamins </li>
+            <li>Glycerine suppositories </li>
+          	<li>Miralax </li>
+          	<li>Colace </li>
+          </ul>
+        </div>
+        <h4>Hemorrhoids</h4>
+        <div>
+          <ul>
+            <li>Increase fluids </li>
+            <li>Increase fiber through diet or supplementation as above for constipation </li>
+            <li>Avoid straining with defecation and avoid prolonged times on the toilet </li>
+            <li>Use sitz baths to soothe </li>
+            <li>Try topical therapies—will not cure, but may decrease symptoms, for example, Tucks, Preparation H, Hydrocortisone and epi-foam</li>
+          </ul>
+        </div>
+      </div>","<script defer>
+  $( function() {
+    $( ""#accordion"" ).accordion({
+      collapsible: true,
+      heightStyle: ""content""
+    });
+  } );
+  </script>",ob_q23,1
+24,depression_postpartum_pregnancy,24,What if I have depression during pregnancy or the postpartum period?,"<p>Depression is a very common disorder and is seen frequently during pregnancy and in the postpartum period. Feelings of depression such as loss of hope, interests, inability to concentrate and emotional instability should be discussed with your health care provider and considerations for treatment weighed. <strong>Any patient who feels she wants to harm herself or her baby should immediately contact her health care provider or report immediately to the emergency room. This can be treated.</strong></p>
+<p>It is appropriate to treat depression medically during pregnancy. As is the case with any medication, the risk of taking the medication must be weighed against the risk of not taking the medicine and the potential benefits. SSRIs are the class of drugs most often employed to treat depression and there is some controversy regarding their safety during pregnancy. Though they are thought to be associated with preterm birth, decreased birth weight, and neonatal syndrome, they have not been associated with major congenital defects or long term developmental deficits in childhood. There may be a small association with persistent pulmonary hypertension in the newborn. The absolute risk is very small and PPHN would be found in less than 1% of babies born to mothers taking SSRIs in the third trimester. Thus, the benefits of taking an SSRI during pregnancy will typically outweigh the risk. That being said, there are many options for treatment of depression and that treatment should be individualized.</p>",,ob_q24,1
+30,vaginal_yeast_infection,1,"I think I have a vaginal yeast infection, what should I do?","<p>Yeast infections of the vagina tend to cause itching, irritation, burning with urination, and a white discharge. If the discharge is a different color and has a fishy odor there is a high probability you actually have a bacterial infection. In this case you should make an appointment to be seen in the office. If you suspect a yeast infection, we don’t discourage the use of over the counter yeast medicines such as <em>Monistat</em>. It is important to know that patients will frequently misdiagnose themselves and correspondingly, mistreat themselves.</p>",,gyn_q6,2
+25,what_is_a_pap_smear,1,What is a pap smear? When should I have one?,"<p>A pap smear is a screening test for cervical cancer. It is not a diagnostic test. It alerts the clinician to take a closer look. It is done during a speculum exam. Screening should start by 3 years after first intercourse or age 21, whichever comes first. Women aged 21-30 should have them done yearly. If a woman aged 30 and above has a negative result on 3 consecutive annual paps, they she may be re-screened every 2-3 years. If the patient has a negative pap and a negative HPV assay, she should be re-screened in 3 years. Most medical bodies recommend discontinuing cervical cancer screening between ages 65 and 70.</p>",,gyn_q1,2
+26,what_does_it_mean_if_my_pap_smear_is_abnormal,2,What does it mean if my pap smear is abnormal?,"<p>A pap smear is just a screening test; it does not make a diagnosis. A diagnosis is typically made with a simple clinical procedure called <strong>colposcopy</strong>. <strong>Colposcopy</strong> involves a longer speculum exam. During this exam, a special scope is used to visualize the cervix closer. Typically, small biopsies are taken to arrive at a diagnosis. There is a spectrum of potential diagnoses. We don't typically find cervical cancer. We very commonly find <strong>dysplasia</strong>. <strong>Dysplasia</strong> is a treatable condition which can be a precursor to cervical cancer. It is graded on biopsy as low and high grade. Low grade dysplasia or mild dysplasia will typically resolve on its own over a year or so in a woman with an intact immune system. By contrast, we typically treat a woman who is diagnosed with high grade dysplasia. High grade dysplasia encompasses several diagnoses of increasing severity: moderate dysplasia, severe dysplasia and carcinoma in situ. There are numerous treatments available. The most commonly utilized in our practice is <strong>LEEP</strong> or (looped electrosurgical excision procedure). This is an outpatient procedure where a small charged loop is used to shave the atypical tissue off the cervix. Some patients may be offered laser surgery or even cryosurgery in the clinic.</p>",,gyn_q2,2
+27,what_is_the_HPV_virus,3,What is the HPV virus?,"<p>HPV or human papilloma virus is a sexually transmitted virus which has been implicated as the cause of cervical cancer. Sexually active women have a 50-75% chance of being infected with HPV during their lifetime. There are over 100 serotypes of the virus. Some are more virulent than others. Most will cause no changes to the cervix. Some will cause only inflammation or other low grade changes in the cervix. Some will cause venereal warts. A select group of high- risk HPV subtypes are considered more virulent and likely to cause changes in the cervix. Some important things to remember are:</p>
+<ul>
+<li>It can be years before changes by the HPV are seen. Most likely, no changes are ever seen.</li>
+<li>The vast majority of patients with HPV will never get cervical cancer.</li>
+<li>Your immune system will likely clear the virus to the point it is undetectable.</li>
+<li>Smoking cigarettes enhances the virus's ability to cause tissue changes.</li>
+<li>A pap smear is a screening test for tissue changes caused by the virus; colposcopy is the diagnostic test. If you have dysplasia on colposcopic biopsy, you have HPV.</li>
+<li>There is a procedure available for the detection of the virus alone.</li>
+</ul>",,gyn_q3,2
+28,just_started_birth_control_what_to_expect,4,"I have just started the birth control (pill, patch or ring). What should I expect?","<p>Most of the hormonal contraceptives contain a combination of estrogen and progesterone. They work by inhibiting the ovulation of the egg. They also make the cervical mucus relatively impermeable by the sperm. They don't prevent STDs. The most common side effect is breakthrough or unplanned bleeding. This is going to be especially true in the first 4 to 6 months. It can take that long for the pill to regulate the cycle. Any change in formulation before 3 months is likely premature. Also, as the dose of estrogen decreases, so does cycle control. Many of the newer pills have only 20 micrograms of ethinyl estradiol; correspondingly, breakthrough bleeding will be increased with these products. Patients taking other hepatically metabolized medicines such as anti-seizure medicine or chronic antibiotics like doxycyline should consider a higher formulation. I would also consider a higher formulation in patients weighing greater than 190 pounds. Most of the side effects from the pill will be due to the estrogen component. These include nausea, breast tenderness, fluid retention and decreased libido. Occasionally, the pill will cause an increase in blood pressure. There are certain patients to whom we would not give the pill. These include smokers greater than 35 years old (increased risk of deep venous thrombosis), patients with liver disease, patients with a personal or family history of thrombophilia (make clots easily, that is, factor 5 leidon mutation) and patients with breast or endometrial cancer. Some potential, but not certain contraindictions include women with migraines and high blood pressure. Some of the side benefits of the pill include cycle control, decreased volume of menses, decreased cramping or dysmenorrhea, reduced risk of ovarian and endometrial cancer by 40 percent, reduced risk of pelvic inflammatory disease and reduced acne.</p>",,gyn_q4,2
+31,what_is_dysplasia,7,What is dysplasia?,"<p>Dysplasia is atypia in the tissue of the cervix caused by HPV which has the potential of being precancerous. It is diagnosed via colposcopy after an abnormal pap smear. Colposcopy is a procedure performed in the office during which the provider looks closely at the cervix with a scope. Biopsies are typically taken to confirm the diagnosis. Dysplasia may be put into subcategories depending on the degree of atypia:</p>
+<u>
+<li>Mild</li>
+<li>Moderate</li>
+<li>Severe</li>
+<li>Carcinoma-in-situ</li>
+</ul>
+<p>It is impossible to predict which of the lesions will eventually become cancer if untreated. Over 60% of patients with mild dysplasia will undergo spontaneous resolution over the course of a year. 90% resolve over two years. So it may be appropriate to watch a reliable patient without treating mild dysplasia for 1-2 years. Notably, patients with compromised immune systems should be treated more aggressively. Patients with higher grades of dysplasia are usually treated with simple out patient treatments. These treatments are highly effective for preventing cervical cancer.</p>",,gyn_q7,2
+32,who_gets_cervical_cancer,8,Who gets Cervical Cancer?,"<p>In the United States, over 10,000 women can expect to be diagnosed with cervical cancer each year. Over 3,700 will die from the disease. Most of these patients aren't regularly screened with pap smears. Fortunately, in the US, screening with pap smears and colposcopy have been very effective. In developing countries, cervical cancer is a major cancer killer.</p>",,gyn_q8,2
+33,what_is_the_HPV_vaccine,9,What is the HPV vaccine?,"<p>The FDA has recently approved Gardasil by Merck.  It is the <a href=""/faqs/what_is_the_HPV_virus"">HPV</a> vaccine developed from purified inactive proteins for four different HPV subtypes (6,11,16,18).  The purpose of the vaccine is to prevent cervical cancer &amp; genital warts and other rarer cancers of the vagina and vulva.  Notably, there are &gt;100 subtypes of  HPV and this vaccine is designed to prevent infection from four.  These are four of the most troublesome and the vaccine could prevent 70% of cervical cancers and 90% of genital warts.  The take home point is that the vaccine will not cover 100% of the HPV viruses.  Patients who are sexually active are still at risk for infection with HPV and other viruses as well as bacterial STIs.  Patients who get the vaccine should continue cervical cancer screening with pap smears per established guidelines.</p>
+<p>It is best when given before HPV infection. Thus, before a woman becomes sexually active.  There is currently, no clear cut mandate on when to initiate the vaccine.  There is some evidence that it may be advantageous even in women who are already sexually active.  It is being targeted for patients 9-12 years old.  Should be considered in women through their 20’s.  </p>
+<p>The vaccine is given over 3 injections:  </p>
+<ul>
+  <li>1st dose</li>
+  <li>2nd dose 2 months after first dose</li>
+  <li>3rd dose 6 months after 1st dose.</li>
+</ul>
+<p>There are minimal risks associated with the virus for example, it will not cause the patient to have an HPV infection.  Some side effects and issues:  </p>
+<ol>
+  <li>Potential injection site side effects: pain, swelling, redness</li>
+  <li>Fever</li>
+  <li>Risk of allergic response</li>
+  <li>Doesn't protect against all HPV types</li>
+  <li>Doesn't protect against other causes of STI (sexually transmitted infections) such as herpes, hepatitis, HIV, chlamydia and gonorrhea to name a few.</li>
+</ol>
+<p>This vaccine is not free of controversy.  Many parents are concerned that it will encourage promiscuity.  My opinion is it can only decrease promiscuity. I reason this because I believe the threat of HPV is not currently a deterrent to promiscuity because most people are not educated on the risks of viral STIs, particularly HPV.  The discussions regarding this vaccine will enhance most patients' knowledge of viral STIs and will likely encourage consideration of uncovered HPV subtypes as well as other STIs such as HSV, HIV and Hepatitis.  I reason that the resultant discussion and knowledge is more likely to result in abstinence than promiscuity especially in light of the fact that HPV is not currently a deterrent.</p>",,gyn_q9,2
+34,can_I_prevent_infection_by_HPV,10,How can I prevent infection by HPV?,<p>At Northland Obstetrics and Gynecology we advocate an abstinence-based approach to STI(sexually transmitted infection) prevention. The advantages of this approach are overwhelming. We realize that patients may choose other paths and that even married partners may have to deal with HPV based on any type of sexual contact in either partner's past. Condoms are a helpful but not reliable tool for prevention of STIs. They certainly have a role in contraception and disease prevention. The HPV vaccine certainly represents a new tool for primary prevention of HPV infection and should be considered even in patients who plan to be monogamous.</p>,,gyn_q10,2
+35,how_does_cyclic_progesterone_work,11,How does cyclic progesterone (provera or prometrium) work?,"<p>Provera or medroxyprogesterone acetate is a hormone frequently given to women in order to achieve regular cyclic bleeding. Physiologically, this works well because it mimics what happens naturally during a normal ovulatory cycle. If you break the menstrual cycle into two parts, the follicular phase where the egg is developed and luteal phase, where the egg is fertilized and implanted, you may understand why cyclic provera works. In a normal cycle, during the follicular phase, a group of eggs develop in the ovary. That creates estrogen. That estrogen in turn stimulates the lining of the uterus to proliferate, or develop. At midcycle, the developed egg is released or ovulated.</p>
+<p>Now comes the luteal phase during which, the mechanism that made the estrogen during the follicular phase, starts to make progesterone which maintains the uterine lining throughout the luteal phase. That little progesterone factory lasts 14 days and unless rescued by a conception (pregnancy), involutes (dies). The subsequent sudden loss of progesterone results in a ""withdrawal bleed"" or menstrual cycle. A 10 day course of provera or progesterone mimics that little luteal phase progesterone factory. The subsequent withdrawal of the oral progesterone mimics the natural withdrawal of progesterone and should trick the uterus into menstruating. The patient that doesn't ovulate regularly such as the patient with polycystic ovaries, never develops the little progesterone factory, thus the lining never has a progesterone withdrawal. In the absence of the regular orderly withdrawal, the uterine lining becomes unstable and unpredictable, susceptible to sporadic breakthrough bleeding.</p>",,gyn_q11,2
+36,how_is_cyclic_progesterone_given,12,How is cyclic progesterone (provera or prometrium) given?,"<p>Provera is typically prescribed during the second half of the month long cycle or, during the luteal phase. That is why the prescription typically describes taking the medicine days 16 through 25. Upon receiving the medicine at first, you will likely not know where you are in your cycle so you start the medicine immediately. Within 1-3 days of finishing your 10 day course, you should have a menstrual cycle. This cycle can be significantly heavier than your usual cycle. The day you start bleeding after the medicine, is CYCLE DAY #1. From that day forward, count to day 16 and that is when you initiate your next 10 day course and so on... Patients are typically put on at least a 3 month course.  Each subsequent cycle should become more manageable.</p>
+<p>A couple words of caution:
+</p><ul><li>It is possible to bleed too much. If you are concerned about the volume of blood loss, go to the emergency room, especially if you feel like your heart is racing, you feel dizzy, or appear pale.</li> 
+<li>Uterine/vaginal bleeding can be the sign of miscarriage, ectopic pregnancy, and different forms of uterine pathology.  Further investigation is sometimes warranted.</li>
+<li>Pregnant patients should not cycle with provera. If you have any question about potential pregnancy, do a pregnancy test before taking provera.</li>
+<li>If you are bleeding when you originally start the provera, it probably won't stop that bleeding. Also, sometimes, patients will get breakthrough bleeding in the middle of their course of progesterone. Most patients will complete the 10 day course with no additional bleeding.</li></ul>",,gyn_q12,2
+37,how_do_I_start_the_oral_contraceptive_pill_ocp,13,How do I start the oral contraceptive pill (ocp)?,"<p>There are a couple ways to start the ocp. The first method is to wait for your next menstrual cycle. In doing so, you can wait until the Sunday, or start on any one of the days. Many of the packages will allow you to adjust the labeling so that you do not get confused by the labeled day versus the actual day. The other option is to not wait for your menstrual cycle. In this event, you should take a pregnancy test to confirm you are not pregnant. Again, you may start on a Sunday, or adjust the labeling.</p>
+<p>If you start during a menstrual cycle, you are required to use backup contraception for the first week. If you start in the middle cycle, use backup contraception for at least a month. To be safe, I usually recommend backup contraception for the first month.</p>",,gyn_q13,2
+38,what_should_I_do_if_I_miss_a_birth_control_pill,14,What should I do if I miss a birth control pill?,"<p>If you miss one active pill( hormonally active pills are one of the 1st 21), take the missed pill as soon as you remember and then take your next pill at the regularly scheduled time.</p>
+
+<p>If you miss 2 active pills in a row, what you do depends on where in the pack the missed pills are. If the missed pills come from the first 2 weeks, take 2 pills the day you remember and then take 2 pills the next day as well, then finish the pack as you normally would. <strong>You must use a backup birth control method for 7 days after the missed pills.</strong></p>
+
+<p>If the missed pills come from the third week, throw-out the rest of the pill pack and start a new pill pack that day. <strong>You must use backup birth control for 7 days after the missed pills.</strong> Also, note that you may not have a menstrual cycle that month. Of course, if you use Sunday as a reference, continue taking one pill a day until Sunday then throw out the pack and start a new pack on Sunday.</p>",,gyn_q14,2
+39,hysterectomy_vaginal_bleeding,1,"I had a hysterectomy recently and have noticed some vaginal bleeding, what should I do?","<p>This is a very common scenario. After any vaginal hysterectomy, or laparoscopically-assisted vaginal hysterectomy substantial vaginal discharge will be noticed postoperatively because the suture closing the vagina is exposed to the vaginal environment. As that suture dissolves, bleeding may be noted from a skin edge. This is usually not an emergency. Either wait until a follow-up appointment or call for a sooner follow-up. The surgeon can treat the skin edges with a chemical which will resolve the problem. Total laparoscopic hysterectomy and abdominal hysterectomy patients typically experience less discharge but, can experience the same bleeding postoperatively and will typically be treated in the clinic. If the bleeding is brisk, we recommend going to the emergency room.</p>",,postop_q1,3
+40,fluid_from_abdominal_incision,2,There is fluid coming out of my abdominal incision. What should I do?,"<p>The fluid can appear yellow, or red like blood. It can even be quite dark like oil. Typically, this is due to a seroma or pocket of fluid in the skin layer or even a stable clot of blood which has formed in the skin layer. Rarely does it mean the fascial or muscular wall closure has been compromised. The volume of fluid can be profound. Rarely does it need immediate attention. Cover the area with several sterile guaze pads and call for an asap appointment.</p>",,postop_q2,3
+41,abdominal_incision_developed_warmth_redness,3,My abdominal incision has developed an area of warmth and redness around it. What should I do?,"<p>This could indicate a skin infection called cellulitis. If the area is small, you may be asked to outline the area with a pen and see if it expands. In any case, you will be asked to make an asap appointment for evaluation.</p>",,postop_q3,3
+42,bladder_surgery_can_not_urinate,4,I had a bladder surgery and now I can't urinate. What should I do?,"<p>Call the office or if after hours go to the emergency room. The inability to urinate soon after bladder surgery is not something to worry about though if not dealt with quickly can be become quite uncomfortable. Usually it occurs due to some peri-urethral inflammation. Another cause is pain. Being able to urinate is dependent on being able to relax the pelvic muscles. If an increase in pain is noted secondary to over-exertion or a variety other potential causes, urinary retention may result.</p>",,postop_q4,3
+43,i_had_surgury_when_can_i,5,"I had surgery, when can I?","<p><em><strong>Drive:</strong></em> For most surgery, you will be advised to abstain from driving for at least a week.
+Certainly the patient needs to be able to move her feet from pedal to pedal without hesitancy or pain and she should never drive while under the influence of a narcotic. So, for most surgeries involving a larger abdominal incision we recommend at least two weeks.<br>
+<em><strong>Shower:</strong></em> For most surgery, you need to wait only 24 hours before being able to shower.   You can do this without having to cover the incision.
+<br>
+<em><strong>Take a bath:</strong></em>  Ok greater than 24 hours after surgery.  Do not bother covering the incision.
+<br>
+<em><strong>Walk up stairs:</strong></em>  When tolerated by the patient.  Any activity that involves increasing abdominal pressure such as rising from a seated to a standing position, having a BM or walking up stairs, has the potential to cause some discomfort due to the increased pressure stressing the incision.  We are not concerned about damaging the incision in these cases though we recommend caution.
+<br>
+<strong><em>Become sexually active:</em></strong></p>
+<table width=""400"" border=""0"" cellspacing=""1"" cellpadding=""1"">
+  <tbody><tr>
+    <td>Any vaginal surgery</td>
+    <td>at least 6 weeks</td>
+  </tr>
+  <tr>
+    <td>Hysterectomy</td>
+    <td>at least 6 weeks</td>
+  </tr>
+  <tr>
+    <td>Cesarean section</td>
+    <td>6 weeks</td>
+  </tr>
+  <tr>
+    <td>Episiotomy or laceration</td>
+    <td>6 weeks</td>
+  </tr>
+  <tr>
+    <td>LEEP</td>
+    <td>2 weeks</td>
+  </tr>
+  <tr>
+    <td>Operative laparoscopy</td>
+    <td>2 weeks</td>
+  </tr>
+  <tr>
+    <td>Minor Laparoscopy ie BTL</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>Hysteroscopy, endometrial ablation</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>Colposcopy</td>
+    <td>3 days</td>
+  </tr>
+</tbody></table>
+<br>
+<p><strong><em>Exercise:</em></strong> In general, we would follow the same guidelines as above for sexual activity.  We would add the caveat.  Anyone undergoing reconstructive surgery for prolapse should abstain from heavy lifting for 100 days after the surgery. ""Heavy"" lifting is vague.  For most that means that weight at which the patient must substantially strain as in to lift a 25+ pound of dog food. 
+  <br>
+  <em><strong>Smoke:</strong></em> Never!!!!!! </p>",,postop_q5,3
+44,when_should_i_be_concerned,6,I had surgery. When should I be concerned and go to the ER or call?,"<p><strong><em>Fever:</em></strong> an ongoing or sporadic fever greater than 100.5 may be a concern.
+  <br>
+  <br>
+  <em><strong>Pain:</strong></em> We expect patients to have discomfort after surgery.  We also expect patients to have times when they feel even sharp discomfort where they didn't feel it before, we call them ""ouchies"" this is normal while healing and they should resolve.  What is not normal is to have a progressive pain that does not respond to pain medicine.  There is no clear guideline, but patients generally can tell when something isn't right.
+<br><br>
+<em><strong>Bleeding:</strong></em> We expect patients who have any type of vaginal surgery to have some vaginal bleeding. This will typically evolve into a discharge and may evolve back into more a bright red scenario as the sutures dissolve. Even laparoscopy patients should expect some bleeding due to the clamp that was placed on the cervix.  We do not expect patients to have active copious bright red bleeding.  These patients should go to the emergency room.   
+<br><br>
+<strong><em>Nausea and vomiting:</em></strong>  Nausea and vomiting around the time of surgery is not uncommon.  If you had surgery within the last 24 hours, this is likely a residual effect of the anesthetic.  We recommend liquid diet as tolerated.  Advance as you improve.  If the nausea and vomiting does not improve or advances, go to the ER.  Nausea and vomiting that occurs more than 24 hours after surgery should never be considered normal and if the problem is ongoing or worsening, we recommend you call or go to the emergency room.
+<br><br>
+<strong><em>Constipation:</em></strong> Postoperative constipation is one of the most difficult issues. The combination of narcotics, immobility, and dietary changes following surgery can lead to significant morbidity. We become more concerned when there is significant pain, nausea or vomiting, fever, or cessation of gas passage. These would all be indications to seek immediate medical help. To counter this difficult problem, we recommend Colace. If more immediate help is needed, Milk of Magnesia may be taken. </p>",,postop_q6,3

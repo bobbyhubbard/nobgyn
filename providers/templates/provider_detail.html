@@ -38,6 +38,7 @@
       <h2>Education</h2>
       {% for schoolRel in schoolRels %}
       <p>{% autoescape off %}{{schoolRel.formatted}} {% if schoolRel.graduation_year %}&dash; {{schoolRel.graduation_year}}{% endif %} {% endautoescape %}</p>
+      {% if schoolRel.degree %}<p>{{schoolRel.degree}}</p>{% endif %}
       {% endfor %}
       <h2>Certifications and Organizations</h2>
       {% for certOrgRel in certOrgRels %}

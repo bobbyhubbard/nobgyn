@@ -40,10 +40,18 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.10.111',
 
 # in-memory cache
 CACHES = {
+    'a': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    },
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
-    }
+        'TIMEOUT': 600,
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000
+        }
+    },
 }
 
 CACHE_VIEW_EXPIRATION = 60 * 60 * 24
@@ -81,8 +89,8 @@ MIDDLEWARE = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware'
 ]
 
-#SECURE_CONTENT_TYPE_NOSNIFF = True
-##SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
 #SECURE_REFERRER_POLICY = True
 #SECURE_SSL_REDIRECT = True
 
@@ -124,8 +132,12 @@ WSGI_APPLICATION = 'northlandobgyn.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nobgyn',
+        'HOST': '/opt/bitnami/mariadb/tmp/mysql.sock',
+        'PORT': '3306',
+        'USER': 'NOBGYN',
+        'PASSWORD': get_env_value('MYSQL_PASSWORD')
     }
 }
 
