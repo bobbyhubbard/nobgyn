@@ -35,8 +35,8 @@ SECRET_KEY = get_env_value('DJANGO_PROD')
 DEBUG = False
 
 # 172.26.13.103
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.10.111',
-                 '3.22.239.246', '*', '.northlandobgyn.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
+                 '3.22.239.246', '3.141.65.150', '.northlandobgyn.com']
 
 # in-memory cache
 CACHES = {
@@ -49,7 +49,7 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
         'TIMEOUT': 600,
         'OPTIONS': {
-            'MAX_ENTRIES': 1000
+            'MAX_ENTRIES': 200
         }
     },
 }

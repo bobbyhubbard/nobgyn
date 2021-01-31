@@ -11,7 +11,6 @@ id,slug,view_order,name,icon,summary_desc,desc,services,sidebar
 2,gynecology,2,Gynecology,static/images/icons/icon-gynecology.svg,"From well woman visits and adolescent gynecology to menopausal services and more, we are committed to providing comprehensive health services to every woman, regardless of age.","Gynecology is the study and care of the health of the female reproductive system. From Well Woman visits and adolescent gynecology to menopausal services and preventative care, Northland Obstetrics & Gynecology is committed to providing comprehensive health services to every woman, regardless of age.
 The physicians of Northland Obstetrics &amp; Gynecology who specialize in OB-GYN care are committed to the promotion of women’s health.","<ul>
 <li>Annual exams and well woman care</li>
-<li>Bone density determination</li>
 <li>Cystometric testing for voiding abnormalities</li>
 <li>Contraception counseling and management</li>
 <li>Management of gynecologic problems:

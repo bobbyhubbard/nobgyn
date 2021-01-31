@@ -73,7 +73,7 @@ For any profuse vaginal bleeding, medical attention should be sought immediately
 13,less_than_36_weeks_regular_contractions,13,I am less than 36 weeks and am having regular contractions. What should I do?,"<p>Preterm labor is a profound problem in obstetrics, affecting 7-10 percent of pregnant women. The causes are multifactorial and the presentation varied. In general, we are much more tolerant of contractions after 34 weeks. Before 34 weeks, we are much less tolerant of contractions that occur more than 6 per hour. If you are having contractions and think they could be labor contractions, you will be instructed to rest on your side, drink 32-64 oz. of water and observe the contractions. If contractions continue at more than 6 per hour or worsen, then this is more concerning for the possibility of preterm labor, and you will be asked to come into labor and delivery. There are some signs which make the possibility of preterm labor higher. Those include foul smelling or blood tinged discharge or suspected rupture of membranes.</p>",,ob_q13,1
 14,pregnant_and_have_a_headache,14,What if I am pregnant and have a headache?,"<div class=""alert alert-warning"" role=""alert"">Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
 <p>Headache is a very common complaint, and a very difficult problem to deal with via the internet, or any ""call-in"" type scenario. The vast majority of headaches in reproductive aged women are going to be benign and self-limited. First, one must clarify what type of headache you have. In clarifying the type of headache, we must be mindful of danger signs that mandate presentation to an emergency room. Some of these might be:</p>
-<ol>
+<ul>
   <li>First time headache.  The patient has never had headaches before.    </li>
   <li>High intensity headache.  Described as the worst headache of a person's life.    </li>
   <li> Severe persistent headache which reaches maximal intensity within a few seconds.    </li>
@@ -82,8 +82,8 @@ For any profuse vaginal bleeding, medical attention should be sought immediately
   <li>Visual changes.</li>
   <li>Headache with exertion.    </li>
   <li>Patients being followed for high blood pressure especially in the third trimester.  May have swelling, visual changes and even abdominal pain.    </li>
-</ol>
-<p>If the patient has a history of migraines and the headache is typical, then we usually conclude that this is a migraine though many patients will notice an improvement in migraines during pregnancy.  Tension headaches are very common during pregnancy.  Typically, we recommend Tylenol 1000mg and before 32 weeks gestation, ibuprofen (ie advil,motrin) 800mg.  We also recommend drinking a caffeinated beverage such as 12 oz. soda.  Though we don't advocate regular caffeine consumption, episodic use is not contraindicated in this situation.  We do not recommend using your midrin, or imitrex. If you call the on-call physician, you will likely be told to go to the emergency room for evaluation and pain medications.</p>","<div class=""alert alert-warning"" role=""alert"">Nsaids such as motrin, ibuprofen, advil, naprosyn, and aspirin to name a few have generally been considered safe when taken during pregnancy before 32 weeks gestational age.  We encourage caution in the use of nsaids especially during the first trimester.  There may be a small association with the use of these agents and the formation of cardiac septal defects and orofacial cleft defects in the newborn.</div>",ob_q14,1
+</ul>
+<p>If the patient has a history of migraines and the headache is typical, then we usually conclude that this is a migraine though many patients will notice an improvement in migraines during pregnancy.  Tension headaches are very common during pregnancy.  Typically, we recommend Tylenol 1000mg and before 32 weeks gestation, ibuprofen (ie advil,motrin) 800mg.  We also recommend drinking a caffeinated beverage such as 12 oz. soda.  Though we don't advocate regular caffeine consumption, episodic use is not contraindicated in this situation.  We do not recommend using your midrin, or imitrex. If you call the on-call physician, you will likely be told to go to the emergency room for evaluation and pain medications.</p>","<div class=""alert alert-warning"" role=""alert"">Nsaids such as Motrin, ibuprofen, advil, naprosyn, and baby aspirin to name a few have generally been considered safe when taken during pregnancy before 20 weeks gestational age.  We encourage caution in the use of nsaids especially during the first trimester.  There may be a small association with the use of these agents and the formation of cardiac septal defects and orofacial cleft defects in the newborn.</div>",ob_q14,1
 15,pregnant_and_upper_respiatory_tract_infection,15,What if I have an upper respiratory tract infection?,"<div class=""alert alert-warning"" role=""alert""> Patients should take medicines during pregnancy only as a last alternative.   Many medicines are considered ""safe"" when taken during pregnancy, and are described as such here; however, these declarations are usually made via observational studies of populations.  They are rarely made as the result of rigorous study.  Thus, caution and restraint should be exercised in starting any medication, prescription or over the counter, during pregnancy.</div>
 <p> The URI or upper respiratory tract infection is a catch-all term used to describe the common signs and symptoms of the ""common cold"".  Most of these infections are viral in nature and they resolve spontaneously.  Occasionally, a patient will have a bacterial infection involving the sinuses or the throat, such as strep throat, or even pneumonia.  These patients require antibiotic therapy.  It can be difficult to differentiate the common viral infection from the more serious bacterial URI or pneumonia.  If the symptoms are of new onset (&lt;1-2 weeks) and not accompanied by fever, productive sputum, or chest pain and shortness of breath.  Supportive care is likely indicated and the patient may try one of the approved over the counter preparations to relieve her symptoms.  There are a variety of over the counter medications available.  Anti-histamines are utilized extensively.  See the list below and match the medications to the appropriate symptoms.  Importantly, these medications do not ""cure"" the infections.  They are intended to only relieve the symptoms caused by the infections.</p>
 <ul>
@@ -204,7 +204,7 @@ Consider the following if the symptoms are new onset and not associated with ale
       <div id=""accordion"">
         <h4>Pain or headache</h4>
         <div>
-          <p>Tylenol (acetaminophen); Ibuprofen (Advil, motrin) up to 32 weeks pregnant. Tylenol and motrin may be used together. To alleviate a migraine headache, drink a caffeinated beverage with Tylenol and motrin, though we don't advocate the regular consumption of caffeine.</p>
+          <p>Tylenol (acetaminophen); Ibuprofen (Advil, Motrin) up to 20 weeks pregnant; Benadryl; Magnesium. Tylenol and Motrin may be used together. To alleviate a migraine headache, drink a caffeinated beverage with Tylenol and Motrin.</p>
         </div>
         <h4>Cold, runny nose</h4>
         <div>
@@ -222,10 +222,10 @@ Consider the following if the symptoms are new onset and not associated with ale
                 <li>Sudafed (pseudoephedrine)—after 12 weeks pregnant</li>
                 <li>Novahistine—after 12 weeks pregnant</li>
                 <li>Tylenol cold and sinus—after 12 weeks pregnant</li>
-                <li>Advil cold and sinus—after 12 weeks and before 32 weeks pregnant</li>
-                <li>Claritin (loratadine)—after 12 weeks</li>
-                <li>Zyrtec—after 12 weeks</li>
-                <li>Mucinex D—after 12 weeks</li>
+                <li>Advil cold and sinus—after 12 weeks and before 20 weeks pregnant</li>
+                <li>Claritin (loratadine)—after 12 weeks pregnant</li>
+                <li>Zyrtec—after 12 weeks pregnant</li>
+                <li>Mucinex D—after 12 weeks pregnant</li>
               </ul>
             </li>
           </ul>
@@ -234,7 +234,7 @@ Consider the following if the symptoms are new onset and not associated with ale
         <div>
           <ul>
             <li>Robitussin (guaifenesin)—after 12 weeks pregnant </li>
-            <li>Delsym (dextromethorphan) </li>
+            <li>Delsym (dextromethorphan)—after 12 weeks pregnant  </li>
             <li>Any over the counter cough/throat lozenge </li>
           </ul>
         </div>
@@ -254,7 +254,6 @@ Consider the following if the symptoms are new onset and not associated with ale
             <li>Tums </li>
             <li>Maalox </li>
             <li>Pepcid (famotidine) </li>
-            <li>Zantac (ranitidine) </li>
             <li>Prescription: <em>nexium</em> (esomeprazole), <em>protonix</em> (pantoprazole), available in some cases and considered safe during pregnancy </li>
             <li>Pepto Bismol: <strong>do not use during pregnancy</strong> </li>
           	<li>Prilosec</li>
@@ -306,15 +305,15 @@ Consider the following if the symptoms are new onset and not associated with ale
         <h4>Constipation</h4>
         <div>
           <ul>
+            <li>Miralax</li>
             <li>Water consumption should be at least 8-10 glasses of water per day </li>
             <li>High fiber diet </li>
             <li>Fiber laxatives such as Metamucil, Citrucel, Fibercon </li>
             <li>Milk of magnesia </li>
             <li>Magnesium Citrate—120 to 240 mL orally </li>
             <li>Mineral oil—may decrease absorption of fat soluble vitamins </li>
-            <li>Glycerine suppositories </li>
-          	<li>Miralax </li>
-          	<li>Colace </li>
+            <li>Glycerine suppositories </li>            
+            <li>Colace </li>
           </ul>
         </div>
         <h4>Hemorrhoids</h4>
@@ -327,7 +326,9 @@ Consider the following if the symptoms are new onset and not associated with ale
             <li>Try topical therapies—will not cure, but may decrease symptoms, for example, Tucks, Preparation H, Hydrocortisone and epi-foam</li>
           </ul>
         </div>
-      </div>","<script defer>
+      </div>","<div class=""alert alert-warning mt-3"" role=""alert"">Nsaids such as Motrin, ibuprofen, advil, naprosyn, and baby aspirin to name a few have generally been considered safe when taken during pregnancy before 20 weeks gestational age.  We encourage caution in the use of nsaids especially during the first trimester.  There may be a small association with the use of these agents and the formation of cardiac septal defects and orofacial cleft defects in the newborn.</div>
+
+<script defer>
   $( function() {
     $( ""#accordion"" ).accordion({
       collapsible: true,

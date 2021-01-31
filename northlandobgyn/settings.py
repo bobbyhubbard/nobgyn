@@ -21,14 +21,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%2t!z5vw11(t@fxbln&zvmfvv*pptk*p2mv5^*va&%k9n&we8g'
+def get_env_value(env_variable):
+    try:
+        return os.environ[env_variable]
+    except KeyError:
+        error_msg = 'Set the {} environment variable'.format(var_name)
+        raise ImproperlyConfigured(error_msg)
+
+
+SECRET_KEY = get_env_value('DJANGO_PROD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # 172.26.13.103
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '172.26.10.111',
-                 '3.22.239.246', '*', '.northlandobgyn.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
+                 '3.22.239.246', '3.141.65.150', '.northlandobgyn.com']
 
 # in-memory cache
 CACHES = {
@@ -37,8 +45,13 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
     },
     'default': {
-
-    }
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+        'TIMEOUT': 600,
+        'OPTIONS': {
+            'MAX_ENTRIES': 200
+        }
+    },
 }
 
 CACHE_VIEW_EXPIRATION = 60 * 60 * 24
@@ -76,8 +89,8 @@ MIDDLEWARE = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware'
 ]
 
-#SECURE_CONTENT_TYPE_NOSNIFF = True
-#SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
 #SECURE_REFERRER_POLICY = True
 #SECURE_SSL_REDIRECT = True
 
@@ -119,8 +132,12 @@ WSGI_APPLICATION = 'northlandobgyn.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nobgyn',
+        'HOST': '/opt/bitnami/mariadb/tmp/mysql.sock',
+        'PORT': '3306',
+        'USER': 'NOBGYN',
+        'PASSWORD': get_env_value('MYSQL_PASSWORD')
     }
 }
 
