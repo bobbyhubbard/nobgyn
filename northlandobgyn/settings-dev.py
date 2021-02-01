@@ -23,6 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%2t!z5vw11(t@fxbln&zvmfvv*pptk*p2mv5^*va&%k9n&we8g'
 
+G_TAG_ID = "G-DMRSSBBRQP"
+GOOGLE_API_KEY = "AIzaSyAhsOOBKF5HaptHgpR1tnmXoPF2CxhVLcg"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -106,6 +109,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'app.context_processors.global_settings',
             ],
         },
     },
