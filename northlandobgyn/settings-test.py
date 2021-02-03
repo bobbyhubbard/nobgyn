@@ -31,7 +31,7 @@ def get_env_value(env_variable):
 
 SECRET_KEY = get_env_value('DJANGO_PROD')
 
-G_TAG_ID = "G-XH4F78FVG8"
+G_TAG_ID = "G-DMRSSBBRQP"
 GOOGLE_API_KEY = "AIzaSyAhsOOBKF5HaptHgpR1tnmXoPF2CxhVLcg"
 
 # SECURITY WARNING: don't run with debug turned on in production!

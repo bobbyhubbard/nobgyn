@@ -4,8 +4,6 @@ from django.conf import settings
 
 from providers.models import Provider
 from services.models import Service
-from header.views import renderHeader
-from footer.views import renderFooter
 from locations.models import Location
 from resources.models import Resource
 
@@ -21,21 +19,20 @@ def index(request):
         'providers': providers,
         'services': services,
         'locations': locations,
-        'resources': resources,
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
+        'resources': resources
     }
-    context['footerFragment'] = renderFooter(context)
 
     return render(request, 'index.html', context=context)
 
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
 def terms(request):
-    context = {
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
-    }
-    context['footerFragment'] = renderFooter(context)
+    return render(request, 'terms.html')
 
-    return render(request, 'terms.html', context=context)
+
+def page_not_found(request, exception):
+    return render(request, '404.html', status=404)
+
+
+def server_error(request):
+    return render(request, '500.html', status=500)

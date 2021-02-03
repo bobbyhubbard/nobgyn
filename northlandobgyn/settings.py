@@ -31,7 +31,7 @@ def get_env_value(env_variable):
 
 SECRET_KEY = get_env_value('DJANGO_PROD')
 
-G_TAG_ID = "G-DMRSSBBRQP"
+G_TAG_ID = "G-XH4F78FVG8"
 GOOGLE_API_KEY = "AIzaSyAhsOOBKF5HaptHgpR1tnmXoPF2CxhVLcg"
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -122,7 +122,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'app.context_processors.global_settings',
+                'northlandobgyn.context_processors.global_settings',
             ],
         },
     },

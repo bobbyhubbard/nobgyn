@@ -4,8 +4,6 @@ from django.views import generic
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 
-from header.views import renderHeader
-from footer.views import renderFooter
 from faqs.models import FAQ
 
 
@@ -19,10 +17,7 @@ def faqDetail(request, slug):
 
     context = {
         'faq': faq,
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
-    context['footerFragment'] = renderFooter(context)
 
     return render(request, 'faq_detail.html', context=context)
 
@@ -37,10 +32,7 @@ def index(request, type="1"):
     context = {
         'faqs': faqs,
         'type': FAQ.faqTypeName(type),
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
-    context['footerFragment'] = renderFooter(context)
 
     return render(request, 'faqs_index.html', context=context)
 

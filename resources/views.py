@@ -4,8 +4,6 @@ from string import ascii_lowercase
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 
-from header.views import renderHeader
-from footer.views import renderFooter
 from resources.models import Resource, Form, FAQLink, Info, HealthPlan
 
 
@@ -25,11 +23,7 @@ def forms_information(request):
         'forms': forms,
         'faqs': faqs,
         'infos': infos,
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
-    context['footerFragment'] = renderFooter(context)
-
     return render(request, 'forms_information.html', context=context)
 
 
@@ -55,11 +49,7 @@ def health_plans(request):
     context = {
         'resource': resource,
         'plans': plans,
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
-    context['footerFragment'] = renderFooter(context)
-
     return render(request, 'health_plans.html', context=context)
 
 
@@ -76,9 +66,6 @@ def index(request):
         'forms': forms,
         'faqs': faqs,
         'infos': infos,
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
-    context['footerFragment'] = renderFooter(context)
 
     return render(request, 'resources_index.html', context=context)

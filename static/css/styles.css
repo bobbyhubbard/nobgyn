@@ -517,6 +517,13 @@ span.file_type {
   width: 100%;
   max-width: 300px;
 }
+.safe_medications_during_pregnancy .ui-state-focus {
+    border: 1px solid #50D3B2;
+}
+.safe_medications_during_pregnancy .ui-state-active {
+    border: 1px solid #50D3B2;
+    background: #0D7359;
+}
 @media (min-width: 1200px) {
   .container-xl {
     max-width: 1440px !important;

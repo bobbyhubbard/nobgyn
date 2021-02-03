@@ -6,8 +6,6 @@ from django.views.decorators.cache import cache_page
 from django.conf import settings
 
 from services.models import Service
-from header.views import renderHeader
-from footer.views import renderFooter
 
 
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
@@ -19,11 +17,7 @@ def serviceDetail(request, slug):
 
     context = {
         'service': service,
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
-    context['footerFragment'] = renderFooter(context)
-
     if (slug == "massage-therapy"):
         return render(request, 'service_massage.html', context=context)
     else:
@@ -33,12 +27,7 @@ def serviceDetail(request, slug):
 @cache_page(settings.CACHE_VIEW_EXPIRATION)
 def index(request):
     services = Service.objects.all()
-
     context = {
         'services': services,
-        'headerFragment': renderHeader(request),
-        'CANONICAL_PATH': request.build_absolute_uri(request.path),
     }
-    context['footerFragment'] = renderFooter(context)
-
     return render(request, 'services_index.html', context=context)

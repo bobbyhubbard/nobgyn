@@ -19,6 +19,12 @@ from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from django.conf.urls import (
+    handler404, handler500
+)
+
+handler404 = 'northlandobgyn.views.page_not_found'
+handler500 = 'northlandobgyn.views.server_error'
 
 app_name = 'nobgyn'
 urlpatterns = [
