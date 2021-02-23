@@ -27,6 +27,8 @@ class Location(models.Model):
         help_text='Display text for appointments', default='8am- 5pm  Monday - Friday')
     phone = models.CharField(
         max_length=14, help_text='Phone display text', default='(816) 781-7820')
+    fax = models.CharField(
+        max_length=14, help_text='Fax display text', default='', blank=True)
     desc = models.TextField(help_text='Description (can be html)', default='')
     highlighted_content = models.TextField(
         help_text='Special content to highlight (can be html)', blank=True, default='')

@@ -24,7 +24,7 @@
         {% autoescape off %}
         <div>
           <p>Massage therapy helps you relax, re-align and rejuvenate. There are many positive aspects to receiving massage therapy on an ongoing basis, and with the busy lives we lead, we can all benefit from a little stress-management.</p>
-          <p><strong>Gift certificates available. Makes a great gift. Or treat yourself today! Call to make an appointment.</strong> <a href="tel:816-781-7820">(816) 781-7820</a></p>
+          <p><strong>Gift certificates available. Makes a great gift. Or treat yourself today! Call to make an appointment.</strong> <a href="tel:816-781-7820" onclick="triggerMassageEvent()">(816) 781-7820</a></p>
         </div>
         <div class="container benefits">
           <div class="row justify-content-md-center">
@@ -110,5 +110,11 @@
     </div>
   </div>
 </section>
+<script>
+  function triggerMassageEvent() {
+    gtag('event', 'massage_call', {
+      'screen_name': 'Massage Service'
+    });
+  }
 {{ footerFragment }}
 {% endblock %}

@@ -59,6 +59,12 @@
                 <div class="col-1"><i class="fal fa-phone-alt"></i></div>
                 <div class="col"><p><a href="tel:{{ location.phone }}">{{ location.phone }}</a></p></div>
               </div>
+              {% if location.fax %}
+              <div class="row">
+                <div class="col-1"><i class="fas fa-fax"></i></div>
+                <div class="col"><p>{{ location.fax }} (fax)</p></div>
+              </div>
+              {% endif %}
             </div>
           </div>
           <div class="row">

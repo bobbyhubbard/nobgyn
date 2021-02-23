@@ -11,7 +11,10 @@
           {% if location.isPrimary %}
           {% autoescape off %}
           <p>{{ location.appointment_text }}</p>
-          <p><a href="tel:{{ location.phone }}">{{ location.phone }}</a></p>
+          <p><i class="fal fa-phone-alt"></i> <a href="tel:{{ location.phone }}">{{ location.phone }}</a></p>
+          {% if location.fax %}
+          <p><i class="fas fa-fax"></i> {{ location.fax }} (fax)</p>
+          {% endif %}
           {% endautoescape %}
           {% endif %}
         {% endfor %}

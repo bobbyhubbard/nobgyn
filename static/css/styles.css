@@ -363,10 +363,10 @@ span.file_type {
   opacity: 0.5;
 }
 
-.service_detail .services li::before,
-.massage-therapy .benefits li::before,
-.faq_detail section li::before,
-.terms section li::before {
+.service_detail .services ul li::before,
+.massage-therapy .benefits ul li::before,
+.faq_detail section ul li::before,
+.terms section ul li::before {
   content: "\2022";
   display: inline-block;
   width: 1em;
