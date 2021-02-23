@@ -10,7 +10,7 @@ scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_proj
 #html only
 #scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn/northlandobgyn/templates/ bitnami@${IPADDR}:/opt/bitnami/projects/northlandobgyn/northlandobgyn/templates/
 
-scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn_static/ bitnami@${IPADDR}:/opt/bitnami/projects/
+#scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn_static/ bitnami@${IPADDR}:/opt/bitnami/projects/
 
 #scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn/startup.sh bitnami@${IPADDR}:~
 
