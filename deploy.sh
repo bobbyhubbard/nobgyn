@@ -1,17 +1,17 @@
 
-#IPADDR=3.22.239.246 #TEST
-IPADDR=3.141.65.150 #PROD
+IPADDR=3.22.239.246 #TEST static IP
+#IPADDR=3.141.65.150 #PROD static IP
 
-#scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn/manage.py ~/dev/django_projects/northlandobgyn/faqs ~/dev/django_projects/northlandobgyn/locations ~/dev/django_projects/northlandobgyn/header ~/dev/django_projects/northlandobgyn/footer ~/dev/django_projects/northlandobgyn/manage.py ~/dev/django_projects/northlandobgyn/northlandobgyn ~/dev/django_projects/northlandobgyn/providers ~/dev/django_projects/northlandobgyn/resources ~/dev/django_projects/northlandobgyn/services bitnami@${IPADDR}:/opt/bitnami/projects/northlandobgyn/
+PROJECT_PATH=~/dev/nobgyn
+
+#ssh bitnami@${IPADDR} "sudo mkdir -p /opt/bitnami/projects/northlandobgyn/"
+#ssh bitnami@${IPADDR} "sudo chown -R bitnami /opt/bitnami/projects/"
+#scp -r $PROJECT_PATH/manage.py $PROJECT_PATH/faqs $PROJECT_PATH/locations $PROJECT_PATH/header $PROJECT_PATH/footer $PROJECT_PATH/manage.py $PROJECT_PATH/northlandobgyn $PROJECT_PATH/providers $PROJECT_PATH/resources $PROJECT_PATH/services bitnami@${IPADDR}:/opt/bitnami/projects/northlandobgyn/
 
 #settings only
-#scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn/northlandobgyn/settings.py bitnami@${IPADDR}:/opt/bitnami/projects/northlandobgyn/northlandobgyn/settings.py
+#scp $PROJECT_PATH/northlandobgyn/settings.py bitnami@${IPADDR}:/opt/bitnami/projects/northlandobgyn/northlandobgyn/settings.py
 
 #html only
-#scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn/northlandobgyn/templates/ bitnami@${IPADDR}:/opt/bitnami/projects/northlandobgyn/northlandobgyn/templates/
+scp -r $PROJECT_PATH/services bitnami@${IPADDR}:/opt/bitnami/projects/northlandobgyn/
 
-scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn_static/ bitnami@${IPADDR}:/opt/bitnami/projects/
-
-#scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn/startup.sh bitnami@${IPADDR}:~
-
-#scp -ri /Users/hubbardr/.ssh/LightsailDefaultKey-us-east-2.pem ~/dev/django_projects/northlandobgyn/*.conf_ bitnami@${IPADDR}:/opt/bitnami/apache2/conf/vhosts/
+#scp $PROJECT_PATH_static/ bitnami@${IPADDR}:/opt/bitnami/projects/
