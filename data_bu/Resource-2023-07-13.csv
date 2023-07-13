@@ -1,0 +1,10 @@
+id,slug,view_order,name,icon,isLink,isFormLink,external_link,content,form_content
+3,patient_portal,1,Patient Portal,static/images/icons/icon-portal.svg,1,0,https://www.northlandobgyn.com/resources/#portal,"<p id=""portal"">Use our Patient Portal to complete your medical history and view medical records. Please contact our office with any questions.</p>
+
+<ul><li>Visits <b>after</b> 07/16/2023 use <a href=""https://health.healow.com/NOBGYN"" target=""patient_portal"">Healow Patient Portal</a>.</li>
+<li>Visits <b>prior</b> to 07/16/2023 use <a href=""https://patientportal.digichart.com/"" target=""patient_portal"">digiChart Patient Portal</a>.</li></ul>",
+4,pay_bill,2,Pay My bill,static/images/icons/icon-bill-pay.svg,0,1,,"Use our secure <a href=""#"" target=""billpay"" onclick=""$('form[name=&quot;billpay&quot;]').submit(); event.preventDefault()"">online bill pay tool</a> to easily make payments. We accept MasterCard, Visa, and Discover.","<form name=""billpay"" target=""billpay"" method=""post"" action=""https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"">
+    <input type=""hidden"" name=""LinkId"" value=""afb274fd-4529-47ad-a155-c9328805449c"">
+</form>"
+1,forms_information,3,Forms & Information,static/images/icons/icon-forms.svg,0,0,,,
+2,health_plans,4,Health Plans,static/images/icons/icon-health_plans.svg,0,0,,This is a current list of insurance plans accepted by Northland Obstetrics & Gynecology.,

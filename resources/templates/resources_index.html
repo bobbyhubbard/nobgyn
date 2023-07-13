@@ -28,7 +28,7 @@
           <div class="col-3"><img src="/{{ resource.icon }}" alt="{{ resource.slug }}" class="resource-icon" width="60"></div>
           <div class="col-9 resource-summary">
             {% if resource.external_link %}
-              <h2><a target="{{resource.slug}}" href="{{ resource.external_link }}">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></h2>
+              <h2><a id="{{resource.slug}}" target="{{resource.slug}}" href="{{ resource.external_link }}">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></h2>
             {% elif resource.form_content %}
               <h2><a href="#" target="billpay" onclick="$('form[name=&quot;billpay&quot;]').submit(); event.preventDefault()">{{ resource.name }}</a> <small><i class="far fa-external-link"></i></small></h2>
               {% autoescape off %}{{ resource.form_content }}{% endautoescape %}
